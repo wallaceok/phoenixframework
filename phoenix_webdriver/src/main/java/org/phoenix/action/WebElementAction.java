@@ -24,6 +24,7 @@ import org.phoenix.model.CaseLogBean;
 import org.phoenix.model.DataBean;
 import org.phoenix.model.LocatorBean;
 import org.phoenix.model.UnitLogBean;
+import org.phoenix.utils.SystemInfo;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -173,7 +174,7 @@ public class WebElementAction extends WebElementLocator implements ElementAction
 	@Override
 	public void openNewWindowByIE(String url){
 			caseLogBean.setEngineType("IEDriver");
-			System.setProperty("webdriver.ie.driver", WebElementAction.class.getResource("/").getPath().replace("%20", " ")+"drivers/IEDriverServer64.exe");
+			System.setProperty("webdriver.ie.driver", WebElementAction.class.getResource("/").getPath().replace("%20", " ")+"drivers/IEDriverServer"+SystemInfo.getArch()+".exe");
 			WebDriverRunner.setWebDriver(new InternetExplorerDriver());
 			Selenide.open(url);
 	}
