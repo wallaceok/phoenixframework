@@ -201,8 +201,7 @@ public class TaskController {
 			model.addAttribute("slaves", slaveService.getSlaveModelList(u.getId()));
 			return "task/edit";
 		}
-		SlaveModel slaveModel = new SlaveModel();
-		slaveModel.setId(taskModelDTO.getSlaveId());
+		SlaveModel slaveModel = slaveService.getModel(taskModelDTO.getSlaveId());
 		TaskModel taskModelSrc = taskService.getTaskModel(id);
 		taskModelSrc.setSlaveModel(slaveModel);
 		taskModelSrc.setTaskName(taskModelDTO.getTaskName());

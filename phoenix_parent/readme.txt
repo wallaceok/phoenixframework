@@ -16,6 +16,7 @@
 1、phoenix_web：修复xpath作数据分离后带有'\'符号的不能正常使用问题<br>
 2、phoenix_webdriver：修复webElementLinkFinder方法数据分离无效的问题<br>
 3、phoenix_develop增加了几个应用案例，如如何做接口测试等<br>
+4、phoenix_web：修复通过编辑任务添加的定时任务策略不生效问题
 <br>
 系统名称：自动化测试平台<br> 
 系统介绍： <br>

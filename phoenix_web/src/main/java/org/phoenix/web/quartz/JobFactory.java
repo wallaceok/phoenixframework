@@ -66,11 +66,17 @@ public class JobFactory {
 		try{
 			StdScheduler scheduler = (StdScheduler)SpringBeanFactory.getInstance().getBeanById("schedulerFactoryBean");
 	        JobDetail jobDetail = scheduler.getJobDetail(JobKey.jobKey(taskModel.getId()+"", JOB_GROUP_NAME));  
-	        Class<? extends QuartzJobBean> objJobClass = (Class<? extends QuartzJobBean>) jobDetail.getJobClass(); 
+	        Class<? extends QuartzJobBean> objJobClass = null;
+	        try{
+	        	objJobClass = (Class<? extends QuartzJobBean>) jobDetail.getJobClass(); 
+	        }catch(Exception e){
+	        	objJobClass = TaskHandler.class;
+	        }
 	        deleteJob(taskModel);
 	        addJob(objJobClass,taskModel);
 	        return "success";
 		}catch(Exception e){
+			e.printStackTrace();
 			return "异常信息："+e.getMessage();
 		}
 	}
@@ -105,7 +111,8 @@ public class JobFactory {
         	scheduler.unscheduleJob(TriggerKey.triggerKey(taskModel.getId()+"", JOB_GROUP_NAME));// 移除触发器  
             scheduler.deleteJob(jobKey);
             return "success";
-        } catch (SchedulerException e) {
+        } catch (Exception e) {
+        	e.printStackTrace();
             return e.getCause().toString();
         }
 	}
