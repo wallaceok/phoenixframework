@@ -38,7 +38,7 @@ public class TestPhoenixCaseUseLocator extends WebElementActionProxy{
 		webProxy.checkPoint().checkIsEqual("百度一下", s);
 		webProxy.webElement("#su",LocatorType.CSS).click();
 		webProxy.checkPoint().checkIsFalse(s!=null);
-		webProxy.sleep(1000);
+		webProxy.sleep(5000);
 		Iterator<SelenideElement> els = webProxy.webElementLinkFinder(".s_tab").$$(By.tagName("a")).iterator();
 		while(els.hasNext()){
 			SelenideElement se = els.next();

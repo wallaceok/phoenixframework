@@ -94,7 +94,7 @@
 					<c:when test="${'WEB_SCENARIO' eq taskModel.taskType }">
 					  <c:forEach items="${beanList }" var="bl">
 					  	<c:choose>
-					  		<c:when test="${bl.id eq taskModel.taskData }"><sf:option value="${bl.id }_${bl.caseName }" selected="selected">${bl.id } - ${bl.scenarioName }</sf:option></c:when>
+					  		<c:when test="${bl.id eq taskModel.taskData }"><sf:option value="${bl.id }_${bl.scenarioName }" selected="selected">${bl.id } - ${bl.scenarioName }</sf:option></c:when>
 					  		<c:otherwise><sf:option value="${bl.id }_${bl.scenarioName }">${bl.id } - ${bl.scenarioName }</sf:option></c:otherwise>
 					  	</c:choose>
 					  </c:forEach>

@@ -1,18 +1,21 @@
 ﻿# phoenixframework<br>
-phoenixframe是一个自动化测试平台，集代码托管，分机（node节点）管理，定时任务，<br>
+   phoenixframework是一个自动化测试平台，集代码托管，
+ 分机（node节点）管理，定时任务，<br>
 分布式或并发等方式执行通过phoenix_develop模块调试好的用例。<br>
-平台使用SSH4开发，覆盖了webgui，接口，移动mobile等终端的自动化测试与监控。<br>
+平台使用SSH4开发，覆盖了webgui，接口，移动mobile等终端的测试与监控。<br>
 目前webGUI模块已经完成，兼容chrome，Firefox，IE以及phantomjs驱动。<br>
-平台通过phoenix_develop模块在客户端开发及调试代码，然后通过将代码托管到phoenix_web控制端，<br>
-控制端通过指派多个phoenix_node端方式执行测试用例。通过使用phoenix_develop开发用例代码的示例，<br>
+平台通过phoenix_develop模块在客户端开发及调试代码，
+然后通过将代码托管到phoenix_web控制端，<br>
+控制端通过指派多个phoenix_node端方式执行测试用例。
+通过使用phoenix_develop开发用例代码的示例，<br>
 用例如果在本地调试时没有问题，那么就可以放到控制端进行执行了。<br>
 平台网站：http://www.cewan.la，中文搜：测完啦<br>
 <br>
-最新版本：1.2.7<br>
+最新版本：1.2.8<br>
 更新内容：<br>
-1、phoenix_webdriver增加链式编程<br>
-2、phoenix_webdriver日志中增加enginetype<br>
-3、phoenix_webdriver完善chrome，Firefox浏览器支持<br>
+1、phoenix_web：修复xpath作数据分离后带有'\'符号的不能正常使用问题<br>
+2、phoenix_webdriver：修复webElementLinkFinder方法数据分离无效的问题<br>
+3、phoenix_develop增加了几个应用案例，如如何做接口测试等<br>
 <br>
 系统名称：自动化测试平台<br> 
 系统介绍： <br>

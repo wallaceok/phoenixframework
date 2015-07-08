@@ -66,7 +66,7 @@ public class LocatorController {
 		caseBean.setId(locatorDTO.getCaseId());
 		LocatorBean locatorBean = new LocatorBean();
 		locatorBean.setCaseBean(caseBean);
-		locatorBean.setLocatorData(locatorDTO.getLocatorData());
+		locatorBean.setLocatorData(locatorDTO.getLocatorData().replace("\\", ""));
 		locatorBean.setLocatorDataName(locatorDTO.getLocatorDataName());
 		locatorBean.setLocatorType(locatorDTO.getLocatorType());
 		locatorService.addLocator(locatorBean);
@@ -98,7 +98,7 @@ public class LocatorController {
 		
 		LocatorBean locatorBean = locatorService.getLocatorBean(id);
 		locatorBean.setCaseBean(caseBean);
-		locatorBean.setLocatorData(locatorDTO.getLocatorData());
+		locatorBean.setLocatorData(locatorDTO.getLocatorData().replace("\\", ""));
 		locatorBean.setLocatorDataName(locatorDTO.getLocatorDataName());
 		locatorBean.setLocatorType(locatorDTO.getLocatorType());
 		locatorService.updateLocator(locatorBean);

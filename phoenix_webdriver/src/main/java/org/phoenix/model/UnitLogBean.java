@@ -1,5 +1,6 @@
 package org.phoenix.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -45,6 +46,7 @@ public class UnitLogBean {
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Column(columnDefinition="mediumtext",length = 16777215)
 	public String getContent() {
 		return content;
 	}

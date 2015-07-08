@@ -105,14 +105,16 @@ public class WebElementAction extends WebElementLocator implements ElementAction
 	 * 链式查询方法，直接调用了SelenideElement，调用了此方法后，后续的操作将不会被记录日志
 	 */
 	@Override
-	public SelenideElement webElementLinkFinder(String locatorData){
-		return WebElement(locatorData,LocatorType.CSS);
+	public SelenideElement webElementLinkFinder(String locatorDataName){
+		LocatorBean locatorBean = locators.get(locatorDataName);
+		return WebElement(locatorBean.getLocatorData(),locatorBean.getLocatorType());
 	}
 	/**
 	 * 链式查询方法，直接调用了SelenideElement，调用了此方法后，后续的操作将不会被记录日志
 	 */
 	@Override
 	public SelenideElement webElementLinkFinder(String locatorData,LocatorType locatorType){
+		if(locatorType == null)locatorType = LocatorType.CSS;
 		return WebElement(locatorData,locatorType);
 	}
 	
