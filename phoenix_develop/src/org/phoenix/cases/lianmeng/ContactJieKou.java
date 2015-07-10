@@ -26,8 +26,8 @@ public class ContactJieKou extends WebElementActionProxy{
 		WebResponse resp = webProxy.webAPIAction().getResponseByGet("http://lianmeng.360.cn/media/contact/index.html");
 		String s = null;
 		try {
-			s = resp.getTitle();
-		} catch (SAXException e) {
+			s = resp.getText();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		System.out.println(s);

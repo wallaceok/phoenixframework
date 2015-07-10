@@ -30,16 +30,11 @@ public class WebApiInvocationHandler implements InvocationHandler {
 		Object result = null;
 		try{
 			result = method.invoke(this.target, args);
-			if(result == null){
-				unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args),method.getName(),"WEBAPI","SUCCESS","",caseLogBean));
-				PhoenixLogger.info("接口方法 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args));
-			} else {
-				unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 校验失败，相关参数："+Arrays.toString(args)+",校验结果："+result,method.getName(),"WEBAPI","FAIL","",caseLogBean));
-				PhoenixLogger.warn("接口方法 ["+method.getName()+"] 校验失败，相关参数："+Arrays.toString(args)+",校验结果："+result);
-			}
+			unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args),method.getName(),"WEBAPI","SUCCESS","",caseLogBean));
+			PhoenixLogger.info("接口方法 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args)+"，返回结果值："+result);
 		}catch(Exception e){
-			unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 方法执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString(),method.getName(),"WEBAPI","FAIL","",caseLogBean));
-			PhoenixLogger.error("接口方法 ["+method.getName()+"] 方法执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString());
+			unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString(),method.getName(),"WEBAPI","FAIL","",caseLogBean));
+			PhoenixLogger.error("接口方法 ["+method.getName()+"] 执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString());
 		}
 		return result;
 	}
