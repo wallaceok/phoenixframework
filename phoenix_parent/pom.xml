@@ -198,12 +198,12 @@
 	</dependency>
 	<dependency>
 		<groupId>${project.groupId}</groupId>
-		<artifactId>phoenix_mobiledriver</artifactId>
+		<artifactId>phoenix_interface</artifactId>
 		<version>${project.version}</version>
 	</dependency>
-		<dependency>
+	<dependency>
 		<groupId>${project.groupId}</groupId>
-		<artifactId>phoenix_develop</artifactId>
+		<artifactId>phoenix_mobiledriver</artifactId>
 		<version>${project.version}</version>
 	</dependency>
 	
