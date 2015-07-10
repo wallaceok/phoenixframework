@@ -11,6 +11,7 @@ public interface ICaseService {
 	void delCase(int id);
 	void updateCase(CaseBean caseBean);
 	List<CaseBean> getCaseBeanListByUser(int uid);
+	List<CaseBean> getCaseBeanListByUT(int uid,String taskType);
 	List<CaseBean> getCaseBeanListByScenario(int scenarioId);
 	Pager<CaseBean> getCaseBeanPagerByUser(int uid);
 	Pager<CaseBean> getCaseBeanPagerByScenario(int scenarioId);

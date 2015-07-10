@@ -63,10 +63,12 @@ public class ActionFactory implements Callable<AjaxObj>{
 		int modelId = Integer.parseInt(taskModel.getTaskData());
 		switch(taskType){
 		case WEB_CASE:
+		case INTERFACE_CASE:
 			CaseDao caseDao = new CaseDao();
 			CaseBean caseBean = caseDao.load(modelId);
 			return new CaseAction(caseBean,taskModel,null,false);
 		case WEB_SCENARIO:
+		case INTERFACE_SCENARIO:
 			ScenarioDao scenarioDao = new ScenarioDao();
 			ScenarioLogDao scenarioLogDao = new ScenarioLogDao();
 			ScenarioLogBean scenarioLogBean = new ScenarioLogBean();

@@ -11,7 +11,7 @@ public interface IDwrService {
 	
 	List<StatisticsDTO> listCaseStatus(int id);
 	List<StatisticsDTO> listScenarioStatus(int id);
-	List<CaseBean> listWebCaseBeanByUser(String taskType);
+	List<CaseBean> listWebCaseBeanByUT(String taskType);
 	List<ScenarioBean> listWebScenarioBeanByUser(String taskType);
 	
 }

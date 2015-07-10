@@ -58,10 +58,10 @@ public class DwrService implements IDwrService{
 	}
 	@Override
 	@RemoteMethod
-	public List<CaseBean> listWebCaseBeanByUser(String taskType) {
+	public List<CaseBean> listWebCaseBeanByUT(String taskType) {
 		HttpSession session = WebContextFactory.get().getSession();
 		User u = (User)session.getAttribute("loginUser");
-		List<CaseBean> dataList = caseService.getCaseBeanListByUser(u.getId());
+		List<CaseBean> dataList = caseService.getCaseBeanListByUT(u.getId(),taskType);
 		return dataList;
 	}
 	@Override

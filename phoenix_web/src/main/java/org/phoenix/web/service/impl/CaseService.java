@@ -44,7 +44,12 @@ public class CaseService implements ICaseService{
 	public List<CaseBean> getCaseBeanListByUser(int uid) {
 		return caseDao.getCaseBeanListByUser(uid);
 	}
-
+	
+	@Override
+	public List<CaseBean> getCaseBeanListByUT(int uid, String taskType) {
+		return caseDao.getCaseBeanListByUT(uid, taskType);
+	} 
+	
 	@Override
 	public List<CaseBean> getCaseBeanListByScenario(int scenarioId) {
 		return caseDao.getCaseBeanListByScenario(scenarioId);
@@ -68,5 +73,6 @@ public class CaseService implements ICaseService{
 	@Override
 	public Pager<CaseBean> getCaseBeanPagerByKeyWord(int uid, String keyword) {
 		return caseDao.getCaseBeanPagerByKeyWord(uid, keyword);
-	}   
+	}
+  
 }

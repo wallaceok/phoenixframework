@@ -9,7 +9,7 @@ function typeSelect(data){
 }
 
 function web_case(data){
-            dwrService.listWebCaseBeanByUser(data,function(dataList){
+            dwrService.listWebCaseBeanByUT(data,function(dataList){
         		for(var i=0;i<dataList.length;i++){
         			$("<option></option>")
 	                    .val(dataList[i].id +'_'+dataList[i].caseName)

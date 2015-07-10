@@ -83,7 +83,7 @@
         <td colspan="2"><%-- <sf:input path="taskData" value="${taskModel.taskData }"/> --%>
             <sf:select data-placeholder="请选择一个任务" class="chosen-select" style="width:260px;" tabindex="2" path="taskData">
 				<c:choose>
-					<c:when test="${'WEB_CASE' eq taskModel.taskType }">
+					<c:when test="${'WEB_CASE' eq taskModel.taskType || 'INTERFACE_CASE' eq taskModel.taskType}">
 					  <c:forEach items="${beanList }" var="bl">
 					  	<c:choose>
 					  		<c:when test="${bl.id eq taskModel.taskData }"><sf:option value="${bl.id }_${bl.caseName }" selected="selected">${bl.id } - ${bl.caseName }</sf:option></c:when>
@@ -91,7 +91,7 @@
 					  	</c:choose>
 					  </c:forEach>
 					</c:when>
-					<c:when test="${'WEB_SCENARIO' eq taskModel.taskType }">
+					<c:when test="${'WEB_SCENARIO' eq taskModel.taskType || 'INTERFACE_SCENARIO' eq taskModel.taskType}">
 					  <c:forEach items="${beanList }" var="bl">
 					  	<c:choose>
 					  		<c:when test="${bl.id eq taskModel.taskData }"><sf:option value="${bl.id }_${bl.scenarioName }" selected="selected">${bl.id } - ${bl.scenarioName }</sf:option></c:when>

@@ -31,6 +31,7 @@ public class CaseBean {
 	private String caseName;
 	private String codeContent;
 	private String className;
+	private String caseType;
 	private MsgSendType msgSendType;
 	private boolean isDeleteMsg;
 	private String remark;
@@ -129,6 +130,14 @@ public class CaseBean {
 		this.caseName = caseName;
 	}
 	
+	public String getCaseType() {
+		return caseType;
+	}
+
+	public void setCaseType(String caseType) {
+		this.caseType = caseType;
+	}
+
 	@Column(name="codeContent",length=65500,nullable=true)
 	public String getCodeContent() {
 		return codeContent;

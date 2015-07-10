@@ -10,7 +10,12 @@ import org.springframework.stereotype.Repository;
 
 @Repository("caseDao")
 public class CaseDao extends BaseDao<CaseBean> implements ICaseDao{
-    
+
+	@Override
+	public List<CaseBean> getCaseBeanListByUT(int uid, String taskType) {
+		return super.list("from CaseBean where userId="+uid+" And caseType = " + taskType);
+	}
+	
 	@Override
 	public List<CaseBean> getCaseBeanListByUser(int uid){
 		return super.list("from CaseBean where userId="+uid);
@@ -35,4 +40,5 @@ public class CaseDao extends BaseDao<CaseBean> implements ICaseDao{
 	public Pager<CaseBean> getCaseBeanPagerByKeyWord(int uid, String keyword) {
 		return super.find("from CaseBean where userId="+uid+" And caseName like '%"+keyword+"%'");
 	}
+
 }
