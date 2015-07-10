@@ -13,7 +13,7 @@ public class CaseDao extends BaseDao<CaseBean> implements ICaseDao{
 
 	@Override
 	public List<CaseBean> getCaseBeanListByUT(int uid, String taskType) {
-		return super.list("from CaseBean where userId="+uid+" And caseType = " + taskType);
+		return super.list("from CaseBean where userId="+uid+" And caseType='"+taskType+"'");
 	}
 	
 	@Override
