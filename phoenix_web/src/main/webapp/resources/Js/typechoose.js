@@ -3,7 +3,9 @@
 //====================================================================================================
 function typeSelect(data){
 	switch(data){
-		case "WEB_CASE":web_case(data);break;
+		case "WEB_CASE":
+		case "INTERFACE_CASE":
+			web_case(data);break;
 		case "WEB_SCENARIO":web_scenario(data);break;
 	}
 }
