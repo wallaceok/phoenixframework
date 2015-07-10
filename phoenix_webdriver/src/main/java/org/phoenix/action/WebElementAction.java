@@ -17,6 +17,9 @@ import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.phoenix.aop.CheckPointInvocationHandler;
 import org.phoenix.aop.PhoenixLogger;
+import org.phoenix.aop.WebApiInvocationHandler;
+import org.phoenix.api.action.APIAction;
+import org.phoenix.api.action.WebAPIAction;
 import org.phoenix.dao.DataDao;
 import org.phoenix.dao.LocatorDao;
 import org.phoenix.enums.LocatorType;
@@ -143,6 +146,13 @@ public class WebElementAction extends WebElementLocator implements ElementAction
 	public ICheckPoint checkPoint(){
 		ICheckPoint checkPoint = (ICheckPoint)new CheckPointInvocationHandler(new CheckPoint(),unitLog,caseLogBean).getProxy();
 		return checkPoint;
+	}
+	/**
+	 * 产生webAPI接口代理
+	 */
+	public APIAction webAPIAction(){
+		APIAction webAPIAction = (APIAction) new WebApiInvocationHandler(new WebAPIAction(),unitLog,caseLogBean);
+		return webAPIAction;
 	}
 	/**
 	 * 如果将数据已经录入了数据库，则指定该数据的标识

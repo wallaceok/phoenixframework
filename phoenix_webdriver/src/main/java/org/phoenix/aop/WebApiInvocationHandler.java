@@ -4,12 +4,10 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.LinkedList;
 
 import org.phoenix.model.CaseLogBean;
 import org.phoenix.model.UnitLogBean;
-import org.phoenix.utils.ScreenShot;
 
 /**
  * @author mengfeiyang
@@ -20,7 +18,6 @@ public class WebApiInvocationHandler implements InvocationHandler {
 	private Object target = null;
 	private LinkedList<UnitLogBean> unitLog;
 	private CaseLogBean caseLogBean;
-	private long picName;
 
 	public WebApiInvocationHandler(Object target,LinkedList<UnitLogBean> unitLog,CaseLogBean caseLogBean) {
 		this.target = target;
@@ -31,26 +28,18 @@ public class WebApiInvocationHandler implements InvocationHandler {
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) {
 		Object result = null;
-		String picPath = null;
-		String picWebPath = null;
 		try{
 			result = method.invoke(this.target, args);
 			if(result == null){
-				unitLog.add(new UnitLogBean("检查点 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args),method.getName(),"CHECKPOINT","SUCCESS","",caseLogBean));
-				PhoenixLogger.info("检查点 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args));
+				unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args),method.getName(),"WEBAPI","SUCCESS","",caseLogBean));
+				PhoenixLogger.info("接口方法 ["+method.getName()+"] 执行通过，相关参数："+Arrays.toString(args));
 			} else {
-				picName = new Date().getTime();
-				picPath = ScreenShot.TakeScreenshot(caseLogBean.getAttachPath()+"/screenshot/"+picName+".jpg");
-				picWebPath = "<a href='http://"+caseLogBean.getClientIP()+"/phoenix_node/screenshot/"+picName+".jpg' target='_blank'>点击查看</a>";
-				unitLog.add(new UnitLogBean("检查点 ["+method.getName()+"] 校验失败，相关参数："+Arrays.toString(args)+",校验结果："+result,method.getName(),"CHECKPOINT","FAIL",picWebPath,caseLogBean));
-				PhoenixLogger.warn("检查点 ["+method.getName()+"] 校验失败，相关参数："+Arrays.toString(args)+",校验结果："+result);
+				unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 校验失败，相关参数："+Arrays.toString(args)+",校验结果："+result,method.getName(),"WEBAPI","FAIL","",caseLogBean));
+				PhoenixLogger.warn("接口方法 ["+method.getName()+"] 校验失败，相关参数："+Arrays.toString(args)+",校验结果："+result);
 			}
 		}catch(Exception e){
-			picName = new Date().getTime();
-			picPath = ScreenShot.TakeScreenshot(caseLogBean.getAttachPath()+"/screenshot/"+picName+".jpg");
-			picWebPath = "<a href='http://"+caseLogBean.getClientIP()+"/phoenix_node/screenshot/"+picName+".jpg' target='_blank'>点击查看</a>";
-			unitLog.add(new UnitLogBean("检查点 ["+method.getName()+"] 方法执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString(),method.getName(),"CHECKPOINT","FAIL",picWebPath,caseLogBean));
-			PhoenixLogger.error("检查点 ["+method.getName()+"] 方法执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString()+",截图路径："+picPath);
+			unitLog.add(new UnitLogBean("接口方法 ["+method.getName()+"] 方法执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString(),method.getName(),"WEBAPI","FAIL","",caseLogBean));
+			PhoenixLogger.error("接口方法 ["+method.getName()+"] 方法执行失败，相关参数："+Arrays.toString(args)+",异常信息："+e.getClass().getSimpleName()+",msg:"+e.getMessage()+",caused by:"+e.getCause().toString());
 		}
 		return result;
 	}

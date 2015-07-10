@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import org.openqa.selenium.WebDriver;
+import org.phoenix.api.action.APIAction;
 import org.phoenix.enums.LocatorType;
 import org.phoenix.model.CaseLogBean;
 
@@ -68,6 +69,11 @@ public interface ElementAction {
 	 * @return
 	 */
 	ICheckPoint checkPoint();
+	/**
+	 * 获取webAPI接口的代理方法
+	 * @return
+	 */
+	APIAction webAPIAction();
 	/**
 	 * 如果将数据已经录入了数据库，则指定该数据的标识
 	 * @param dataName

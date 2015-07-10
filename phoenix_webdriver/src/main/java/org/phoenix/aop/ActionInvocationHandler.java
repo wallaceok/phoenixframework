@@ -32,7 +32,7 @@ public class ActionInvocationHandler implements InvocationHandler {
 		Object result = null;
 		try{
 			result = method.invoke(this.target, args);
-			if(!method.getName().equals("checkPoint") && !method.getName().equals("webElement") && !method.getName().equals("toString") && !method.getName().equals("getData")){
+			if(!method.getName().equals("webAPIAction") && !method.getName().equals("checkPoint") && !method.getName().equals("webElement") && !method.getName().equals("toString") && !method.getName().equals("getData")){
 				unitLog.add(new UnitLogBean("步骤 [ "+method.getName()+" ]执行成功，参数值："+Arrays.toString(args)+",执行结果返回值："+result,method.getName(),"STEP","SUCCESS","",caseLogBean));
 				PhoenixLogger.info("步骤 [ "+method.getName()+" ]执行成功，参数值："+Arrays.toString(args)+",执行结果返回值："+result);
 			}
