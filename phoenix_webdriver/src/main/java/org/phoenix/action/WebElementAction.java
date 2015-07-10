@@ -151,7 +151,7 @@ public class WebElementAction extends WebElementLocator implements ElementAction
 	 * 产生webAPI接口代理
 	 */
 	public APIAction webAPIAction(){
-		APIAction webAPIAction = (APIAction) new WebApiInvocationHandler(new WebAPIAction(),unitLog,caseLogBean);
+		APIAction webAPIAction = (APIAction) new WebApiInvocationHandler(new WebAPIAction(),unitLog,caseLogBean).getProxy();
 		return webAPIAction;
 	}
 	/**

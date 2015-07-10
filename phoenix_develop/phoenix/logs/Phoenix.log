@@ -1,0 +1,54 @@
+2015-07-10 17:30:08 [ main:0 ] - [ INFO ] HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-07-10 17:30:08 [ main:16 ] - [ INFO ] HHH000412: Hibernate Core {4.1.7.Final}
+2015-07-10 17:30:08 [ main:16 ] - [ INFO ] HHH000206: hibernate.properties not found
+2015-07-10 17:30:08 [ main:16 ] - [ INFO ] HHH000021: Bytecode provider name : javassist
+2015-07-10 17:30:08 [ main:47 ] - [ INFO ] HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-07-10 17:30:08 [ main:47 ] - [ INFO ] HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-07-10 17:30:08 [ main:203 ] - [ INFO ] HHH000041: Configured SessionFactory: null
+2015-07-10 17:30:08 [ main:453 ] - [ INFO ] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-07-10 17:30:08 [ main:453 ] - [ INFO ] HHH000115: Hibernate connection pool size: 20
+2015-07-10 17:30:08 [ main:453 ] - [ INFO ] HHH000006: Autocommit mode: false
+2015-07-10 17:30:08 [ main:453 ] - [ INFO ] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/phoenix_gui?useUnicode=true&characterEncoding=utf-8]
+2015-07-10 17:30:08 [ main:453 ] - [ INFO ] HHH000046: Connection properties: {user=root, password=****}
+2015-07-10 17:30:09 [ main:766 ] - [ INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-10 17:30:09 [ main:798 ] - [ INFO ] HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-10 17:30:09 [ main:798 ] - [ INFO ] HHH000397: Using ASTQueryTranslatorFactory
+2015-07-10 17:30:09 [ main:1189 ] - [ INFO ] HHH000228: Running hbm2ddl schema update
+2015-07-10 17:30:09 [ main:1189 ] - [ INFO ] HHH000102: Fetching database metadata
+2015-07-10 17:30:09 [ main:1189 ] - [ INFO ] HHH000396: Updating schema
+2015-07-10 17:30:09 [ main:1220 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_batch
+2015-07-10 17:30:09 [ main:1220 ] - [ INFO ] HHH000037: Columns: [uid, tasktype, createdate, id, batchid]
+2015-07-10 17:30:09 [ main:1220 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-10 17:30:09 [ main:1220 ] - [ INFO ] HHH000126: Indexes: [primary]
+2015-07-10 17:30:09 [ main:1235 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_case
+2015-07-10 17:30:09 [ main:1235 ] - [ INFO ] HHH000037: Columns: [actor, duration, attachpath, clientip, endtime, scenariologbeanid, id, casename, starttime, enginetype, status, batchlogid]
+2015-07-10 17:30:09 [ main:1235 ] - [ INFO ] HHH000108: Foreign keys: [fke98647aeda1e53ad]
+2015-07-10 17:30:09 [ main:1235 ] - [ INFO ] HHH000126: Indexes: [fke98647aeda1e53ad, primary]
+2015-07-10 17:30:09 [ main:1251 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_scenario
+2015-07-10 17:30:09 [ main:1251 ] - [ INFO ] HHH000037: Columns: [uid, id, message, taskstatustype, scenarioname, batchlogid]
+2015-07-10 17:30:09 [ main:1251 ] - [ INFO ] HHH000108: Foreign keys: [fk7946d10eda1e53ad]
+2015-07-10 17:30:09 [ main:1251 ] - [ INFO ] HHH000126: Indexes: [fk7946d10eda1e53ad, primary]
+2015-07-10 17:30:09 [ main:1267 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_unit
+2015-07-10 17:30:09 [ main:1267 ] - [ INFO ] HHH000037: Columns: [steptype, stepname, id, screenshot, caselogid, content, status]
+2015-07-10 17:30:09 [ main:1267 ] - [ INFO ] HHH000108: Foreign keys: [fke98ea602411c9d65]
+2015-07-10 17:30:09 [ main:1267 ] - [ INFO ] HHH000126: Indexes: [fke98ea602411c9d65, primary]
+2015-07-10 17:30:09 [ main:1282 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_case
+2015-07-10 17:30:09 [ main:1282 ] - [ INFO ] HHH000037: Columns: [classname, deletemsg, remark, id, casename, create_date, msgsendtype, userid, scenarioid, codecontent, status]
+2015-07-10 17:30:09 [ main:1282 ] - [ INFO ] HHH000108: Foreign keys: [fk8bd1d0a6140b62d9]
+2015-07-10 17:30:09 [ main:1282 ] - [ INFO ] HHH000126: Indexes: [casename, primary, fk8bd1d0a6140b62d9]
+2015-07-10 17:30:09 [ main:1298 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_data
+2015-07-10 17:30:09 [ main:1298 ] - [ INFO ] HHH000037: Columns: [caseid, datacontent, id, dataname]
+2015-07-10 17:30:09 [ main:1298 ] - [ INFO ] HHH000108: Foreign keys: [fk8bd245201b32d119]
+2015-07-10 17:30:09 [ main:1298 ] - [ INFO ] HHH000126: Indexes: [dataname, primary, fk8bd245201b32d119]
+2015-07-10 17:30:09 [ main:1314 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_scenario
+2015-07-10 17:30:09 [ main:1314 ] - [ INFO ] HHH000037: Columns: [remark, id, create_date, userid, scenarioname]
+2015-07-10 17:30:09 [ main:1314 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-10 17:30:09 [ main:1314 ] - [ INFO ] HHH000126: Indexes: [primary, scenarioname]
+2015-07-10 17:30:09 [ main:1329 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_unit
+2015-07-10 17:30:09 [ main:1329 ] - [ INFO ] HHH000037: Columns: [locatortype, caseid, id, locatordataname, locatordata]
+2015-07-10 17:30:09 [ main:1329 ] - [ INFO ] HHH000108: Foreign keys: [fk8bda2efa1b32d119]
+2015-07-10 17:30:09 [ main:1329 ] - [ INFO ] HHH000126: Indexes: [fk8bda2efa1b32d119, locatordataname, primary]
+2015-07-10 17:30:09 [ main:1329 ] - [ INFO ] HHH000232: Schema update complete
+2015-07-10 17:30:09 [ main:1579 ] - [ INFO ] 步骤 [ addLocatorAndDatas ]执行成功，参数值：[报告查看, org.phoenix.model.CaseLogBean@265adfad],执行结果返回值：null
+2015-07-10 17:30:09 [ main:1579 ] - [ INFO ] 步骤 [ setWebProxy ]执行成功，参数值：[org.phoenix.action.WebElementAction@a3d9978],执行结果返回值：null
+2015-07-10 17:30:10 [ main:2142 ] - [ INFO ] 步骤 [ webAPIAction ]执行失败，参数值：null,异常信息：InvocationTargetException,msg:null,caused by:java.lang.ClassCastException: org.phoenix.aop.WebApiInvocationHandler cannot be cast to org.phoenix.api.action.APIAction,截图路径：null/screenshot/1436520609837.jpg
