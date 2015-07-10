@@ -28,10 +28,10 @@ public class HttpRequestSender {
 	 */
 	public static String getResponseByPost(String url, List<String> parameter,String paramType) throws Exception{
 		
-		WebConversation wc = new WebConversation();// 建立一个WebConversation实例		
+		WebConversation wc = new WebConversation();// 建立一个WebConversation实例
 		WebRequest req = new PostMethodWebRequest(url);// 向指定的URL发出请求，获取响应
-
-		for (String para : parameter) {
+		
+		for (String para : parameter) { 
 			String[] parValue = para.split("=>");
 			if(paramType.equals("setParameter")){
 			   req.setParameter(parValue[0], parValue[1]);
@@ -40,7 +40,7 @@ public class HttpRequestSender {
 			}
 		}
 		WebResponse wr = wc.getResponse(req);
-
+		
 		return wr.getText();
 	}
 	
@@ -64,8 +64,8 @@ public class HttpRequestSender {
 			}
 		}
 		WebResponse wr = wc.getResponse(req);
-
-			return wr.getText();
+		
+		return wr.getText();
 	}
 	
 	/*
