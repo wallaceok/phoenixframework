@@ -24,7 +24,7 @@ public class YeWuGuanLi extends WebElementActionProxy{
 		//webProxy.openNewWindowByChrome("http://lianmeng.360.cn/account");
 		webProxy.setFirefoxExePath("D:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 		webProxy.openNewWindowByFirefox("http://lianmeng.360.cn/account");
-		webProxy.webElement("#uname",null).setText("app_susu002");
+		webProxy.webElement("#uname",null).setText("test");
 		webProxy.webElement("passwd", LocatorType.NAME).setText("123456");
 		webProxy.webElement("verifyCode", LocatorType.NAME).setText("6g6m");
 		webProxy.webElement("//*[@id=\"login_form\"]/dl[4]/dd/button",LocatorType.XPATH).click();
@@ -34,7 +34,7 @@ public class YeWuGuanLi extends WebElementActionProxy{
 		String r = webProxy.checkPoint().checkIsEqual("", errorMsg);
 		if(!r.contains("null")){
 			webProxy.webElement("马上注册！", LocatorType.LINKTEXT).click();
-			webProxy.webElementLinkFinder(".panel-content").findElementByLinkText("导航联盟").click();
+			webProxy.webElementLinkFinder(".panel-content",null).findElementByLinkText("导航联盟").click();
 			webProxy.sleep(1000);
 			webProxy.webElement("#user_name", null).setText("Test123");
 			webProxy.webElement("#passwd", null).setText("1111");

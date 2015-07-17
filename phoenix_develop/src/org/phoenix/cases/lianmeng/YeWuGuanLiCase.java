@@ -218,7 +218,7 @@ public class YeWuGuanLiCase extends WebElementActionProxy{
 		YeWuGuanLiCase yw = new YeWuGuanLiCase();
 		LinkedList<UnitLogBean> ll = yw.run(new CaseLogBean());
 		for(UnitLogBean l : ll){
-			//System.out.println(l.getContent());
+			System.out.println(l.getContent());
 		}
 	}
 	
