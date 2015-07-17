@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="UTF-8" /><meta content="webkit" name="renderer" /><meta content="IE=10; IE=9; IE=8; IE=7" http-equiv="X-UA-Compatible" /><title>概况 - 360联盟</title><link href="http://s7.qhimg.com/static/d58ce957d9213b10/front/common/global.css" rel="stylesheet" /> <link href="http://s6.qhimg.com/static/1fcc37f56f019234/front/so/home.css" rel="stylesheet" /> <script>
+	    //app
+	    window.$union = "so";
+	    window.$busType = 4;
+	    window.$userInfo = {"errno":0,"errmsg":null,"uname":"app_susu002","roleId":1,"cellPhone":"183****3151","email":"suchao-xy@360.cn","contactPerson":"susu","passwdExpireDays":51,"financeType":2,"payee":null,"chinaID":"","contact":null,"bankId":null,"bankCity":null,"bankBranch":null,"bankAccount":null,"company":"susuqiye","invoiceType":null,"taxID":null,"businesses":[1,4,6],"channel":null,"userAuditStatus":-3,"userAuditReason":null,"naviRoleId":1,"naviPriceType":0,"isKa":0};
+	    window.$alau = "";
+        window.$il = "1";
+	    </script></head><body> <div id="doc"> <noscript>您浏览器的Javascript功能被禁用，请开启后再访问。</noscript> <div class="clearfix" id="hd"> <h1 class="logo"> <a href="/index"><em>360</em>联盟</a> </h1> <div style="display:none;" class="links clearfix"> <ul> <li><a href="/index">首页</a> </li><li><a href="http://lianmeng.360.cn/media/contact/index.html">联系我们</a> </li></ul> </div> <ul id="login_info"><span class="uname">app_susu002</span> | <span class="unread"><a href="/account/messages">我的消息(<em>0</em>)</a></span> | <!--<span><a href="http://lianmeng.360.cn/help/index.html">帮助中心</a></span> | --><span><a id="logout" href="javascript:;">退出</a></span></ul> </div>  <div class="clearfix" id="navbar"> <ul class="nav"> <li class="active"> <a href="/account">账户首页</a>  </li><li> <a href="/biz">业务管理</a>  </li><li> <a href="/stat">统计报告</a>    </li><li> <a href="/finance">财务管理</a>  </li></ul> </div>  <div class="layout-left-fixed thin " id="bd"> <div class="col-side"> <ul class="stacked-nav"> <li class="active"> <a href="/account/overview">概况</a> </li><li> <a href="/account/profile">账户信息</a> </li><li> <a href="/account/messages">我的消息</a>  </li></ul> </div>  <div class="col-main"> <div data-source="/stat/api/userstat/report/search_union/index?t=0" data-name="statview" id="stat_view" class="view"><!-- overview -->
+        <div class="clearfix" id="overview">
+
+            <!-- 账户余额 -->
+            <div class="mod3 balance">
+                <div class="hd">
+                    <h3>账户余额：</h3>
+                </div>
+                <div class="bd">¥0.00</div>
+            </div>
+
+            <!-- 收入汇总 -->
+            <div class="mod3 income">
+                <div class="hd">
+                    <h3>税前收入：</h3>
+                    <span class="more">税前总收入：¥0.00</span>
+                </div>
+                <div class="bd">
+                    <dl>
+                        <dt>昨日：</dt>
+                        <dd>¥0.00</dd>
+                    </dl>
+                    <dl>
+                        <dt>最近七日：</dt>
+                        <dd>¥0.00</dd>
+                    </dl>
+                    <dl>
+                        <dt>本月：</dt>
+                        <dd>¥0.00</dd>
+                    </dl>
+                    <dl>
+                        <dt>上月：</dt>
+                        <dd>¥0.00</dd>
+                    </dl>
+                </div>
+            </div>
+
+        </div>
+        <!-- end overview -->
+
+        <!-- 昨日数据 -->
+        <div class="mod3 yesterday">
+            <div class="hd"><h3>昨日数据：</h3></div>
+            <div class="bd">
+                <table class="data-list center-aligned">
+                    <thead>
+                        <tr>
+                            <th>业务</th>
+                            <th>检索量</th>
+                            <th>点击量</th>
+                            <th>点击率</th>
+                            <th>千次检索收入(税前)</th>
+                            <th>收入(税前)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>搜索联盟</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00%</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end 昨日数据 --></div> <div class="mod3 trending"> <div class="hd"><h3>走势图</h3></div> <div class="bd"> <form id="chart_form" class="form-inline" action="#"> <dl class="item"> <dt class="label">指标： </dt><dd class="control"> <select id="data_type"> <option value="ad_incoming">收入(税前) </option><option value="ad_pv">检索量 </option><option value="ad_e_clks">点击量 </option><option value="ad_ctr2">点击率 </option><option value="ad_ppm">千次检索收入</option></select></dd></dl> <dl class="item"> <dt class="label">时间范围： </dt><dd class="control"> <select name="t" id="date_rage"> <option value="100">最近7天 </option><option value="101">上周 </option><option value="103">本周 </option><option value="105">本月 </option><option value="5">自定义</option></select> <span style="display:none" id="custom_range"> 从 <span class="datepicker"><input type="text" reqmsg="开始时间" todateel="end_date" id="start_date" emel="date_error" datatype="daterange" name="start" class="text date" maxdatespan="31" minvalue="2014-07-13" maxvalue="2015-07-12" /><img align="absMiddle" style="cursor:pointer" class="calendar-hdl-img" src="http://p9.qhimg.com/t011a721e506dbd781b.png" /></span> 到 <span class="datepicker"><input type="text" reqmsg="结束时间" todateel="end_date" fromdateel="start_date" datatype="daterange" id="end_date" name="end" class="text date" minvalue="2014-07-13" maxvalue="2015-07-12" /><img align="absMiddle" style="cursor:pointer" class="calendar-hdl-img" src="http://p9.qhimg.com/t011a721e506dbd781b.png" /></span> <button class="btn-small" type="button"><b>确定</b></button> <em id="date_error"></em></span></dd></dl></form> <div id="chart" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 750px; height: 220px;" width="750" height="220"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; top: 103px; left: 4px; text-align: right;" class="flot-tick-label tickLabel">0</div><div style="position: absolute; top: 1px; left: 4px; text-align: right;" class="flot-tick-label tickLabel">1</div><div style="position: absolute; top: 205px; left: 1px; text-align: right;" class="flot-tick-label tickLabel">-1</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 750px; height: 220px;" width="750" height="220"></canvas><div class="no-result">暂无数据显示图表</div></div></div></div> </div>  </div>  <div id="ft">Copyright © 360联盟. All Rights Reserved. 京ICP证080047号</div> </div><script src="http://s6.qhimg.com/static/03bd7dc0d5f1ea6e/common.js"></script><script src="http://s0.qhimg.com/lib/jquery/183.js"></script><!--[if lte IE 8]><script src="http://s8.qhimg.com/static/77896fdd4d75595e/libs/excanvas.js" ></script><![endif]--><script>    window._fixhref = function(url) {
+        return url;
+    };
+    /*
+    * 提示用户密码过期需要修改
+    */
+    if(window.$userInfo != undefined &amp;&amp;
+       $userInfo['userAuditStatus'] != 0 &amp;&amp;
+       $userInfo['userAuditStatus'] != 2 &amp;&amp;
+       $userInfo['userAuditStatus'] != -2){
+        var passwdExpireDays = parseInt(window.$userInfo.passwdExpireDays,10);
+        if(window.location.href.indexOf('/account/profile') == -1){
+            if(passwdExpireDays &lt;= 0){
+                var msg = '您的密码已过期，需要修改才能进行其他操作';
+                QW.Panel.alert(msg, function(){
+                    window.location.href = '/account/profile';    
+                });
+            }
+            else if(passwdExpireDays &lt; 15){
+                    $('&lt;div style="color:red;font-size:14px;margin-bottom:5px;"&gt;您的密码还有' + passwdExpireDays + '天过期，请尽快修改&lt;/div&gt;').insertBefore($('div.col-main').children().first());  
+            }
+            else{}
+        }
+    }
+</script> <script>(function() {
+    //handle login
+    QW.Broadcast.on('login', function(e) {
+        Cookie.remove('uss');
+        window.location.href = _fixhref('/');
+    });
+
+    //handle unauthorized request
+    QW.Broadcast.on('unauthorized', function(e) {
+        QW.Panel.alert('您没有权限查看此页面。');
+    });
+
+    //get user name and unread count
+    Ajax.get('/passport/api/message/unreadCount?_t=' + Math.random(), function(responseText) {
+        var result = JSON.parse(responseText);
+        if (result.errno != 0) return;
+
+        //顶部‘我的消息’
+        var unreadnum = 0,
+            html;
+        if (result.total &gt; 0) unreadnum = result.total;
+        html = [
+            '&lt;span class="uname"&gt;{0}&lt;/span&gt; | ',
+            '&lt;span class="unread"&gt;&lt;a href="/account/messages"&gt;我的消息(&lt;em&gt;{1}&lt;/em&gt;)&lt;/a&gt;&lt;/span&gt; | ',
+            '&lt;!--&lt;span&gt;&lt;a href="http://lianmeng.360.cn/help/index.html"&gt;帮助中心&lt;/a&gt;&lt;/span&gt; | --&gt;',
+            '&lt;span&gt;&lt;a href="javascript:;" id="logout"&gt;退出&lt;/a&gt;&lt;/span&gt;'
+        ].join('').format(result.uname.encode4Html(), unreadnum)
+
+        QW.Broadcast.fire('g:view:rendered', W('#login_info').html(html));
+
+        //左侧我的消息
+        if (unreadnum &gt; 0) {
+            if (unreadnum &lt; 10) unreadnum = "&amp;nbsp;{0}&amp;nbsp;".format(unreadnum);
+            $('.col-side a[href*=messages]').append($('&lt;em id="side-message-num"&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/em&gt;'.format(unreadnum)));
+        }
+    });
+
+})();
+
+Dom.ready(function() {
+    //logout
+    W('#login_info').delegate('#logout', 'click', function(e) {
+        e.preventDefault();
+        Ajax.get('/passport/pub/logout?_t=' + Math.random(), function(e) {
+            Cookie.remove('notifread-' + $userInfo.uname, {
+                path: '/'
+            });
+            window.location.href = '/index';
+        });
+    });
+});</script> <script src="http://s7.qhimg.com/static/12ed748a15a13025/libs/jquery.flot.js"></script><script src="http://s6.qhimg.com/static/3046e4ffab662b93/libs/jquery.flot.categories.js"></script><script src="http://s6.qhimg.com/static/96e682e90721f722/front/_so/page/home/index.js"></script><script src="http://s7.qhimg.com/static/576c5dcbf3584b78/front/inc/chartUtils.js"></script> <div id="chart_tooltips" style="display: none;"></div></body><canvas id="fxdriver-screenshot-canvas" style="display: none;" width="995" height="723"></canvas></html>

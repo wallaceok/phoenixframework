@@ -21,9 +21,9 @@ public class ContactJieKou extends WebElementActionProxy{
 	@Override
 	public LinkedList<UnitLogBean> run(CaseLogBean arg0) {
 		init(caseName,arg0);
-		
 		WebResponse resp = webProxy.webAPIAction().getResponseByGet("http://v.youku.com/player/getPlayList/VideoIDS/XNzUwODY4Nzc2/timezone/+08/version/5/source/video?ran=7318&n=3&ctype=10&ev=1&password=");
 		String s = null;
+		resp.getContentLength();
 
 		try {
 			s = webProxy.webAPIAction().getJSONValue(resp.getText(), "JSON.data[0].dvd.point[3].title");

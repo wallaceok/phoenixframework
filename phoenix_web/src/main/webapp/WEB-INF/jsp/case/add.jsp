@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -56,7 +57,21 @@
     <tr>
         <td class="tableleft">用例说明</td>   
         <td><sf:input path="remark"/><sf:errors path="remark"/></td>
-    </tr>   
+    </tr>  
+    <tr>
+    	<td class="tableleft">用例类型</td>
+    	<td>
+    		<sf:select path="caseType">
+    			<c:forEach items="${caseTypes}" var="cts">
+    				<c:choose>
+    					<c:when test="${f:contains(cts.value,'CASE') == true }">
+    						<sf:option value="${cts.key }">${cts.value }</sf:option>
+    					</c:when>
+    				</c:choose>
+    			</c:forEach>
+    		</sf:select>
+    	</td>
+    </tr> 
     <tr>
         <td class="tableleft">启用状态</td>
         <td>

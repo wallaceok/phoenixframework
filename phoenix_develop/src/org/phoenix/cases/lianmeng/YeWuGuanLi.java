@@ -22,7 +22,7 @@ public class YeWuGuanLi extends WebElementActionProxy{
 		init(caseName,arg0);
 		//webProxy.setChromeDriverExePath("C:\\Users\\mengfeiyang\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe");
 		//webProxy.openNewWindowByChrome("http://lianmeng.360.cn/account");
-		webProxy.setFirefoxExePath("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+		webProxy.setFirefoxExePath("D:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 		webProxy.openNewWindowByFirefox("http://lianmeng.360.cn/account");
 		webProxy.webElement("#uname",null).setText("app_susu002");
 		webProxy.webElement("passwd", LocatorType.NAME).setText("123456");
@@ -32,7 +32,7 @@ public class YeWuGuanLi extends WebElementActionProxy{
 		System.out.println(errorMsg);
 		webProxy.sleep(1000);
 		String r = webProxy.checkPoint().checkIsEqual("", errorMsg);
-		if(r != null){
+		if(!r.contains("null")){
 			webProxy.webElement("马上注册！", LocatorType.LINKTEXT).click();
 			webProxy.webElementLinkFinder(".panel-content").findElementByLinkText("导航联盟").click();
 			webProxy.sleep(1000);

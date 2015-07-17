@@ -121,10 +121,10 @@
         <th>任务数据Id</th>
         <th>任务状态</th>
         <th>执行参数</th>
-        <th>定时器状态</th>
+        <th width="12%">定时器状态</th>
         <th>开始时间</th>
         <th>结束时间</th>
-        <th>管理操作</th>
+        <th width="11%">管理操作</th>
     </tr>
     </thead>
     <tbody>

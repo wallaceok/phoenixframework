@@ -13,6 +13,11 @@ import org.phoenix.model.UnitLogBean;
  * 1、组装执行流方式执行流程
  * 2、使用普通方式
  * 3、插入检查点，根据检查点结果选择分支
+ * 4、接口测试与插件
+ * 5、jmeter插件
+ * 6、浏览器定制
+ * 7、定时任务
+ * 8、技术选型
  * @author mengfeiyang
  *
  */
@@ -24,7 +29,9 @@ public class YeWuGuanLiCase extends WebElementActionProxy{
 	public LinkedList<UnitLogBean> run(CaseLogBean arg0) {
 		init(caseName,arg0);
 
-		testFlow("开始->使用firefox->真登陆->业务管理->添加网址->修改->查看->关闭");
+		testFlow("开始->使用firefox->真登陆->业务管理->查看->关闭");
+		
+		//testFlow("开始->使用firefox->真登陆->业务管理->添加网址->修改->查看->关闭");
 		//testFlow("开始->使用firefox->真登陆->业务管理->修改->添加网址->查看->关闭");
 		//testFlow("开始->使用firefox->真登陆->业务管理->修改->查看->关闭");
 		//testFlow("开始->使用chrome->假登陆->注册->关闭");
@@ -142,8 +149,8 @@ public class YeWuGuanLiCase extends WebElementActionProxy{
 	 */
 	public void look(){
 		//webProxy.webElement("业务管理", LocatorType.LINKTEXT).click();
-		tableOper(6,"www.susu.com",3);			
-		webProxy.sleep(1000);
+		tableOper(6,"www.susu.com",1);			
+		webProxy.sleep(2000);
 	}
 	
 	/**

@@ -1,0 +1,155 @@
+2015-07-13 10:59:32 [ main:0 ] - [ INFO ] HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-07-13 10:59:32 [ main:12 ] - [ INFO ] HHH000412: Hibernate Core {4.1.7.Final}
+2015-07-13 10:59:32 [ main:14 ] - [ INFO ] HHH000206: hibernate.properties not found
+2015-07-13 10:59:32 [ main:15 ] - [ INFO ] HHH000021: Bytecode provider name : javassist
+2015-07-13 10:59:32 [ main:39 ] - [ INFO ] HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-07-13 10:59:32 [ main:40 ] - [ INFO ] HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-07-13 10:59:32 [ main:191 ] - [ INFO ] HHH000041: Configured SessionFactory: null
+2015-07-13 10:59:32 [ main:409 ] - [ WARN ] HHH000208: org.hibernate.connection.C3P0ConnectionProvider has been deprecated in favor of org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider; that provider will be used instead.
+2015-07-13 10:59:32 [ main:410 ] - [ INFO ] HHH000130: Instantiating explicit connection provider: org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider
+2015-07-13 10:59:32 [ main:420 ] - [ INFO ] HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/phoenix_gui?useUnicode=true&characterEncoding=utf-8
+2015-07-13 10:59:32 [ main:421 ] - [ INFO ] HHH000046: Connection properties: {user=root, password=****}
+2015-07-13 10:59:32 [ main:421 ] - [ INFO ] HHH000006: Autocommit mode: false
+2015-07-13 10:59:32 [ main:435 ] - [ INFO ] MLog clients using log4j logging.
+2015-07-13 10:59:33 [ main:666 ] - [ INFO ] Initializing c3p0-0.9.1 [built 16-January-2007 14:46:42; debug? true; trace: 10]
+2015-07-13 10:59:33 [ main:737 ] - [ INFO ] Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@12402 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@cad9c142 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1bqu8le9a11010o0yl0vwz|1649b0e6, idleConnectionTestPeriod -> 3000, initialPoolSize -> 3, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@bd1b7735 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1bqu8le9a11010o0yl0vwz|7494f96a, jdbcUrl -> jdbc:mysql://localhost:3306/phoenix_gui?useUnicode=true&characterEncoding=utf-8, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1bqu8le9a11010o0yl0vwz|10959ece, numHelperThreads -> 3 ]
+2015-07-13 10:59:33 [ main:1058 ] - [ INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-13 10:59:33 [ main:1071 ] - [ INFO ] HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-13 10:59:33 [ main:1086 ] - [ INFO ] HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-13 10:59:33 [ main:1091 ] - [ INFO ] HHH000397: Using ASTQueryTranslatorFactory
+2015-07-13 10:59:33 [ main:1404 ] - [ INFO ] HHH000228: Running hbm2ddl schema update
+2015-07-13 10:59:33 [ main:1405 ] - [ INFO ] HHH000102: Fetching database metadata
+2015-07-13 10:59:33 [ main:1411 ] - [ INFO ] HHH000396: Updating schema
+2015-07-13 10:59:33 [ main:1441 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_batch
+2015-07-13 10:59:33 [ main:1442 ] - [ INFO ] HHH000037: Columns: [uid, tasktype, createdate, id, batchid]
+2015-07-13 10:59:33 [ main:1442 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 10:59:33 [ main:1442 ] - [ INFO ] HHH000126: Indexes: [primary]
+2015-07-13 10:59:33 [ main:1462 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_case
+2015-07-13 10:59:33 [ main:1462 ] - [ INFO ] HHH000037: Columns: [actor, duration, attachpath, clientip, endtime, scenariologbeanid, id, casename, starttime, enginetype, status, batchlogid]
+2015-07-13 10:59:33 [ main:1463 ] - [ INFO ] HHH000108: Foreign keys: [fke98647aeda1e53ad]
+2015-07-13 10:59:33 [ main:1464 ] - [ INFO ] HHH000126: Indexes: [fke98647aeda1e53ad, primary]
+2015-07-13 10:59:33 [ main:1475 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_scenario
+2015-07-13 10:59:33 [ main:1475 ] - [ INFO ] HHH000037: Columns: [uid, id, message, taskstatustype, scenarioname, batchlogid]
+2015-07-13 10:59:33 [ main:1475 ] - [ INFO ] HHH000108: Foreign keys: [fk7946d10eda1e53ad]
+2015-07-13 10:59:33 [ main:1475 ] - [ INFO ] HHH000126: Indexes: [fk7946d10eda1e53ad, primary]
+2015-07-13 10:59:33 [ main:1484 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_unit
+2015-07-13 10:59:33 [ main:1484 ] - [ INFO ] HHH000037: Columns: [steptype, stepname, id, screenshot, caselogid, content, status]
+2015-07-13 10:59:33 [ main:1485 ] - [ INFO ] HHH000108: Foreign keys: [fke98ea602411c9d65]
+2015-07-13 10:59:33 [ main:1485 ] - [ INFO ] HHH000126: Indexes: [fke98ea602411c9d65, primary]
+2015-07-13 10:59:33 [ main:1496 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_msgpool
+2015-07-13 10:59:33 [ main:1496 ] - [ INFO ] HHH000037: Columns: [createdata, deletemsg, remark, id, msgcontent, taskmodelid, userid, msgstatustype]
+2015-07-13 10:59:33 [ main:1497 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 10:59:33 [ main:1497 ] - [ INFO ] HHH000126: Indexes: [primary]
+2015-07-13 10:59:33 [ main:1539 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_slave
+2015-07-13 10:59:33 [ main:1539 ] - [ INFO ] HHH000037: Columns: [uid, attachpath, slaveip, remark, id, status]
+2015-07-13 10:59:33 [ main:1539 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 10:59:33 [ main:1540 ] - [ INFO ] HHH000126: Indexes: [primary]
+2015-07-13 10:59:33 [ main:1553 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_task
+2015-07-13 10:59:33 [ main:1553 ] - [ INFO ] HHH000037: Columns: [tasktype, jobstatus, endtime, taskname, starttime, beanname, message, userid, taskstatustype, lasttime, slaveid, id, taskdata, taskparameter]
+2015-07-13 10:59:33 [ main:1553 ] - [ INFO ] HHH000108: Foreign keys: [fkcb6316707240a919, fkcb63167045e219ec]
+2015-07-13 10:59:33 [ main:1554 ] - [ INFO ] HHH000126: Indexes: [taskname, fkcb6316707240a919, fkcb63167045e219ec, primary]
+2015-07-13 10:59:33 [ main:1564 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_case
+2015-07-13 10:59:33 [ main:1565 ] - [ INFO ] HHH000037: Columns: [classname, deletemsg, casetype, remark, id, casename, create_date, msgsendtype, userid, scenarioid, codecontent, status]
+2015-07-13 10:59:33 [ main:1565 ] - [ INFO ] HHH000108: Foreign keys: [fk8bd1d0a6140b62d9]
+2015-07-13 10:59:33 [ main:1566 ] - [ INFO ] HHH000126: Indexes: [casename, primary, fk8bd1d0a6140b62d9]
+2015-07-13 10:59:34 [ main:1577 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_data
+2015-07-13 10:59:34 [ main:1577 ] - [ INFO ] HHH000037: Columns: [caseid, datacontent, id, dataname]
+2015-07-13 10:59:34 [ main:1577 ] - [ INFO ] HHH000108: Foreign keys: [fk8bd245201b32d119]
+2015-07-13 10:59:34 [ main:1578 ] - [ INFO ] HHH000126: Indexes: [dataname, primary, fk8bd245201b32d119]
+2015-07-13 10:59:34 [ main:1589 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_scenario
+2015-07-13 10:59:34 [ main:1589 ] - [ INFO ] HHH000037: Columns: [remark, id, create_date, userid, scenarioname]
+2015-07-13 10:59:34 [ main:1590 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 10:59:34 [ main:1590 ] - [ INFO ] HHH000126: Indexes: [primary, scenarioname]
+2015-07-13 10:59:34 [ main:1598 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_unit
+2015-07-13 10:59:34 [ main:1599 ] - [ INFO ] HHH000037: Columns: [locatortype, caseid, id, locatordataname, locatordata]
+2015-07-13 10:59:34 [ main:1599 ] - [ INFO ] HHH000108: Foreign keys: [fk8bda2efa1b32d119]
+2015-07-13 10:59:34 [ main:1599 ] - [ INFO ] HHH000126: Indexes: [fk8bda2efa1b32d119, locatordataname, primary]
+2015-07-13 10:59:34 [ main:1600 ] - [ INFO ] HHH000232: Schema update complete
+2015-07-13 10:59:34 [ main:1859 ] - [ INFO ] 步骤 [ addLocatorAndDatas ]执行成功，参数值：[报告查看, org.phoenix.model.CaseLogBean@5fe1ce85],执行结果返回值：null
+2015-07-13 10:59:34 [ main:1859 ] - [ INFO ] 步骤 [ setWebProxy ]执行成功，参数值：[org.phoenix.action.WebElementAction@604c5de8],执行结果返回值：null
+2015-07-13 10:59:34 [ main:2149 ] - [ ERROR ] 接口方法 [getResponseByGet] 执行失败，相关参数：[http://v.youku.com/player/getPlayList/VideoIDS/XNzUwODY4Nzc2/timezone/+08/version/5/source/video?ran=7318&n=3&ctype=10&ev=1&password=],异常信息：InvocationTargetException,msg:null,caused by:java.lang.NoClassDefFoundError: org/mozilla/javascript/Scriptable
+2015-07-13 11:01:20 [ main:0 ] - [ INFO ] HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-07-13 11:01:20 [ main:10 ] - [ INFO ] HHH000412: Hibernate Core {4.1.7.Final}
+2015-07-13 11:01:20 [ main:12 ] - [ INFO ] HHH000206: hibernate.properties not found
+2015-07-13 11:01:20 [ main:14 ] - [ INFO ] HHH000021: Bytecode provider name : javassist
+2015-07-13 11:01:20 [ main:41 ] - [ INFO ] HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-07-13 11:01:20 [ main:41 ] - [ INFO ] HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-07-13 11:01:20 [ main:207 ] - [ INFO ] HHH000041: Configured SessionFactory: null
+2015-07-13 11:01:21 [ main:462 ] - [ WARN ] HHH000208: org.hibernate.connection.C3P0ConnectionProvider has been deprecated in favor of org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider; that provider will be used instead.
+2015-07-13 11:01:21 [ main:462 ] - [ INFO ] HHH000130: Instantiating explicit connection provider: org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider
+2015-07-13 11:01:21 [ main:473 ] - [ INFO ] HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/phoenix_gui?useUnicode=true&characterEncoding=utf-8
+2015-07-13 11:01:21 [ main:473 ] - [ INFO ] HHH000046: Connection properties: {user=root, password=****}
+2015-07-13 11:01:21 [ main:473 ] - [ INFO ] HHH000006: Autocommit mode: false
+2015-07-13 11:01:21 [ main:489 ] - [ INFO ] MLog clients using log4j logging.
+2015-07-13 11:01:21 [ main:724 ] - [ INFO ] Initializing c3p0-0.9.1 [built 16-January-2007 14:46:42; debug? true; trace: 10]
+2015-07-13 11:01:21 [ main:793 ] - [ INFO ] Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@9183eab3 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@9798ca74 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1bqu8le9a1103c5hkwv65w|62e7f11d, idleConnectionTestPeriod -> 3000, initialPoolSize -> 3, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@4d30dd9f [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1bqu8le9a1103c5hkwv65w|445b295b, jdbcUrl -> jdbc:mysql://localhost:3306/phoenix_gui?useUnicode=true&characterEncoding=utf-8, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1bqu8le9a1103c5hkwv65w|59af0466, numHelperThreads -> 3 ]
+2015-07-13 11:01:21 [ main:1094 ] - [ INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-13 11:01:21 [ main:1104 ] - [ INFO ] HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-13 11:01:21 [ main:1116 ] - [ INFO ] HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-13 11:01:21 [ main:1120 ] - [ INFO ] HHH000397: Using ASTQueryTranslatorFactory
+2015-07-13 11:01:21 [ main:1371 ] - [ INFO ] HHH000228: Running hbm2ddl schema update
+2015-07-13 11:01:21 [ main:1372 ] - [ INFO ] HHH000102: Fetching database metadata
+2015-07-13 11:01:21 [ main:1376 ] - [ INFO ] HHH000396: Updating schema
+2015-07-13 11:01:21 [ main:1401 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_batch
+2015-07-13 11:01:21 [ main:1402 ] - [ INFO ] HHH000037: Columns: [uid, tasktype, createdate, id, batchid]
+2015-07-13 11:01:21 [ main:1402 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 11:01:21 [ main:1403 ] - [ INFO ] HHH000126: Indexes: [primary]
+2015-07-13 11:01:21 [ main:1417 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_case
+2015-07-13 11:01:21 [ main:1418 ] - [ INFO ] HHH000037: Columns: [actor, duration, attachpath, clientip, endtime, scenariologbeanid, id, casename, starttime, enginetype, status, batchlogid]
+2015-07-13 11:01:21 [ main:1418 ] - [ INFO ] HHH000108: Foreign keys: [fke98647aeda1e53ad]
+2015-07-13 11:01:21 [ main:1419 ] - [ INFO ] HHH000126: Indexes: [fke98647aeda1e53ad, primary]
+2015-07-13 11:01:21 [ main:1430 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_scenario
+2015-07-13 11:01:21 [ main:1430 ] - [ INFO ] HHH000037: Columns: [uid, id, message, taskstatustype, scenarioname, batchlogid]
+2015-07-13 11:01:21 [ main:1430 ] - [ INFO ] HHH000108: Foreign keys: [fk7946d10eda1e53ad]
+2015-07-13 11:01:21 [ main:1430 ] - [ INFO ] HHH000126: Indexes: [fk7946d10eda1e53ad, primary]
+2015-07-13 11:01:22 [ main:1441 ] - [ INFO ] HHH000261: Table found: phoenix_gui.l_web_unit
+2015-07-13 11:01:22 [ main:1442 ] - [ INFO ] HHH000037: Columns: [steptype, stepname, id, screenshot, caselogid, content, status]
+2015-07-13 11:01:22 [ main:1442 ] - [ INFO ] HHH000108: Foreign keys: [fke98ea602411c9d65]
+2015-07-13 11:01:22 [ main:1443 ] - [ INFO ] HHH000126: Indexes: [fke98ea602411c9d65, primary]
+2015-07-13 11:01:22 [ main:1455 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_msgpool
+2015-07-13 11:01:22 [ main:1456 ] - [ INFO ] HHH000037: Columns: [createdata, deletemsg, remark, id, msgcontent, taskmodelid, userid, msgstatustype]
+2015-07-13 11:01:22 [ main:1456 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 11:01:22 [ main:1456 ] - [ INFO ] HHH000126: Indexes: [primary]
+2015-07-13 11:01:22 [ main:1464 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_slave
+2015-07-13 11:01:22 [ main:1464 ] - [ INFO ] HHH000037: Columns: [uid, attachpath, slaveip, remark, id, status]
+2015-07-13 11:01:22 [ main:1464 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 11:01:22 [ main:1465 ] - [ INFO ] HHH000126: Indexes: [primary]
+2015-07-13 11:01:22 [ main:1474 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_task
+2015-07-13 11:01:22 [ main:1474 ] - [ INFO ] HHH000037: Columns: [tasktype, jobstatus, endtime, taskname, starttime, beanname, message, userid, taskstatustype, lasttime, slaveid, id, taskdata, taskparameter]
+2015-07-13 11:01:22 [ main:1474 ] - [ INFO ] HHH000108: Foreign keys: [fkcb6316707240a919, fkcb63167045e219ec]
+2015-07-13 11:01:22 [ main:1475 ] - [ INFO ] HHH000126: Indexes: [taskname, fkcb6316707240a919, fkcb63167045e219ec, primary]
+2015-07-13 11:01:22 [ main:1483 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_case
+2015-07-13 11:01:22 [ main:1484 ] - [ INFO ] HHH000037: Columns: [classname, deletemsg, casetype, remark, id, casename, create_date, msgsendtype, userid, scenarioid, codecontent, status]
+2015-07-13 11:01:22 [ main:1484 ] - [ INFO ] HHH000108: Foreign keys: [fk8bd1d0a6140b62d9]
+2015-07-13 11:01:22 [ main:1484 ] - [ INFO ] HHH000126: Indexes: [casename, primary, fk8bd1d0a6140b62d9]
+2015-07-13 11:01:22 [ main:1493 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_data
+2015-07-13 11:01:22 [ main:1493 ] - [ INFO ] HHH000037: Columns: [caseid, datacontent, id, dataname]
+2015-07-13 11:01:22 [ main:1493 ] - [ INFO ] HHH000108: Foreign keys: [fk8bd245201b32d119]
+2015-07-13 11:01:22 [ main:1493 ] - [ INFO ] HHH000126: Indexes: [dataname, primary, fk8bd245201b32d119]
+2015-07-13 11:01:22 [ main:1502 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_scenario
+2015-07-13 11:01:22 [ main:1503 ] - [ INFO ] HHH000037: Columns: [remark, id, create_date, userid, scenarioname]
+2015-07-13 11:01:22 [ main:1503 ] - [ INFO ] HHH000108: Foreign keys: []
+2015-07-13 11:01:22 [ main:1503 ] - [ INFO ] HHH000126: Indexes: [primary, scenarioname]
+2015-07-13 11:01:22 [ main:1514 ] - [ INFO ] HHH000261: Table found: phoenix_gui.t_web_unit
+2015-07-13 11:01:22 [ main:1514 ] - [ INFO ] HHH000037: Columns: [locatortype, caseid, id, locatordataname, locatordata]
+2015-07-13 11:01:22 [ main:1514 ] - [ INFO ] HHH000108: Foreign keys: [fk8bda2efa1b32d119]
+2015-07-13 11:01:22 [ main:1514 ] - [ INFO ] HHH000126: Indexes: [fk8bda2efa1b32d119, locatordataname, primary]
+2015-07-13 11:01:22 [ main:1516 ] - [ INFO ] HHH000232: Schema update complete
+2015-07-13 11:01:22 [ main:1753 ] - [ INFO ] 步骤 [ addLocatorAndDatas ]执行成功，参数值：[报告查看, org.phoenix.model.CaseLogBean@57abad67],执行结果返回值：null
+2015-07-13 11:01:22 [ main:1754 ] - [ INFO ] 步骤 [ setWebProxy ]执行成功，参数值：[org.phoenix.action.WebElementAction@550a1967],执行结果返回值：null
+2015-07-13 11:01:22 [ main:2205 ] - [ INFO ] 接口方法 [getResponseByGet] 执行通过，相关参数：[http://v.youku.com/player/getPlayList/VideoIDS/XNzUwODY4Nzc2/timezone/+08/version/5/source/video?ran=7318&n=3&ctype=10&ev=1&password=]，返回结果值：HttpWebResponse [url=http://v.youku.com/player/getPlayList/VideoIDS/XNzUwODY4Nzc2/timezone/+08/version/5/source/video?ran=7318&n=3&ctype=10&ev=1&password=; headers=
+   X-CACHE: Miss from b03.v.b28
+   DATE: Mon, 13 Jul 2015 03:01:25 GMT
+   SERVER: Apache
+   CONNECTION: keep-alive
+   SET-COOKIE: ykss=052aa355afba9ffe2737a46d; path=/; domain=.youku.com
+   SET-COOKIE: u=__LOGOUT__; path=/; domain=.youku.com
+   PRAGMA: no-cache
+   CONTENT-TYPE: text/html; charset=UTF-8
+   AGE: 0
+   EXPIRES: Thu, 19 Nov 1981 08:52:00 GMT
+   CONTENT-LENGTH: 10361
+   ACCEPT-RANGES: bytes
+   CACHE-CONTROL: no-store, no-cache, must-revalidate ]
+2015-07-13 11:01:22 [ main:2215 ] - [ INFO ] 接口方法 [getJSONValue] 执行通过，相关参数：[{"data":[{"ct":"a","cs":"2143","logo":"http:\/\/g2.ykimg.com\/1100641F4653E0582D67D300422C3988838F21-8A2E-DE3A-7CD8-A6F4851FE878","seed":5757,"tags":["\u8001\u53cb\u8bb0","\u4e92\u8054\u7f51","\u738b\u5c0f\u5ddd","\u738b\u5174","\u641c\u72d0","\u7f8e\u56e2","\u641c\u72d7"],"categories":"91","videoid":"187717194","vidEncoded":"XNzUwODY4Nzc2","list":[{"seq":"28","vid":"184292521","vidEncoded":"XNzM3MTcwMDg0","title":"\u590f\u534e \u5218\u6c38\u597d\u300a\u575a\u5b88\u300b","vv":541043},{"seq":"29","vid":"184950654","vidEncoded":"XNzM5ODAyNjE2","title":"\u590f\u534e \u5415\u601d\u6e05\u300a\u7528\u5e73\u6de1\u5b88\u671b\u7231\u60c5\u300b","vv":620570},{"seq":"30","vid":"162181418","vidEncoded":"XNjQ4NzI1Njcy","title":"\u5218\u5fb7\u534e \u96f7\u519b\u300a\u5c06\u4eba\u751f\u53d8\u6210\u6218\u573a\u300b","vv":1652470},{"seq":"31","vid":"186130917","vidEncoded":"XNzQ0NTIzNjY4","title":"\u90ed\u656c\u660e \u9648\u783a\u5fd7 \u674e\u529b\u300a\u4e71\u5165\u5c0f\u65f6\u4ee3\u300b","vv":1544397},{"seq":"32","vid":"186966351","vidEncoded":"XNzQ3ODY1NDA0","title":"\u90ed\u656c\u660e \u674e\u529b \u9648\u783a\u5fd7\u300a\u5c0f\u65f6\u4ee3:\u9752\u6625\u9006\u6d41\u6210\u6cb3\u300b","vv":676887},{"seq":"33","vid":"187717194","vidEncoded":"XNzUwODY4Nzc2","title":"\u738b\u5c0f\u5ddd \u738b\u5174\u300a\u4e92\u8054\u7f51\u4e09\u56fd\u6740\u300b","vv":1678370},{"seq":"34","vid":"188413435","vidEncoded":"XNzUzNjUzNzQw","title":"\u5f20\u5411\u4e1c \u5468\u822a\u300a\u4e92\u8054\u7f51\u9010\u68a6\u4eba\u300b","vv":3021577},{"seq":"35","vid":"190583771","vidEncoded":"XNzYyMzM1MDg0","title":"\u5468\u9e3f\u794e \u5f90\u5c0f\u5e73\u300a\u521b\u65b0\u4e0e\u98a0\u8986\u300b","vv":854155},{"seq":"36","vid":"190891555","vidEncoded":"XNzYzNTY2MjIw","title":"\u5b81\u6d69 \u6731\u8f89\u9f99\u300a\u4e92\u8054\u7f51\u7535\u5f71\u65f6\u4ee3\u300b","vv":1065419},{"seq":"37","vid":"190846477","vidEncoded":"XNzYzMzg1OTA4","title":"\u8521\u660e \u59da\u52b2\u6ce2\u300a\u7a77\u5c0f\u5b50\u53d8\u5f62\u8bb0\u300b","vv":2106531},{"seq":"38","vid":"194512673","vidEncoded":"XNzc4MDUwNjky","title":"\u9648\u4e39\u9752 \u6881\u6587\u9053\u300a\u4ea6\u5e08\u4ea6\u53cb\u662f\u66fe\u7ecf\u300b","vv":2385455},{"seq":"39","vid":"195773167","vidEncoded":"XNzgzMDkyNjY4","title":"\u9648\u4e39\u9752 \u6881\u6587\u9053\u300a\u97e9\u6f6e\u518d\u88ad\u300b","vv":2496172},{"seq":"40","vid":"197289105","vidEncoded":"XNzg5MTU2NDIw","title":"\u9648\u4e39\u9752 \u6881\u6587\u9053\u300a\u96f6\u843d\u7684\u5c0a\u4e25\u300b","vv":2221158},{"seq":"41","vid":"198450437","vidEncoded":"XNzkzODAxNzQ4","title":"\u8bb8\u978d\u534e \u8983\u5b8f\u300a\u6df7\u4e71\u65f6\u4ee3\u4e0b\u7684\u575a\u5b88\u300b","vv":1588466},{"seq":"42","vid":"199547606","vidEncoded":"XNzk4MTkwNDI0","title":"\u8d75\u4f20 \u9648\u7115\u7136\u300a\u770b\u8138\u65f6\u4ee3\u300b","vv":2301471},{"seq":"43","vid":"200838000","vidEncoded":"XODAzMzUyMDAw","title":"\u738b\u5c0f\u4e2b \u53e4\u6c38\u9535\u300a\u5e73\u53f0\u4fdd\u536b\u6218\u300b","vv":4535841},{"seq":"44","vid":"202064886","vidEncoded":"XODA4MjU5NTQ0","title":"\u4e8e\u8c26 \u4fde\u654f\u6d2a\u300a\u73a9\u513f\u7684\u81ea\u6211\u4fee\u517b\u300b","vv":2841293},{"seq":"45","vid":"203376531","vidEncoded":"XODEzNTA2MTI0","title":"\u4e8e\u8c26 \u4fde\u654f\u6d2a\u300a\u6559\u00b7\u5b66\u4e4b\u95f4\u300b","vv":1684745},{"seq":"46","vid":"204636245","vidEncoded":"XODE4NTQ0OTgw","title":"\u6f58\u77f3\u5c79 \u5f20\u9996\u665f\u300a\u79d1\u6280\u7684\u6e29\u5ea6\u300b","vv":1791675},{"seq":"47","vid":"205945805","vidEncoded":"XODIzNzgzMjIw","title":"\u4e09\u5b9d \u738b\u5229\u82ac\u300a\u8f6c\u8eab\u7684\u81ea\u6211\u300b","vv":2975294}],"list_pre":{"seq":"32","vid":"186966351","vidEncoded":"XNzQ3ODY1NDA0","title":"\u90ed\u656c\u660e \u674e\u529b \u9648\u783a\u5fd7\u300a\u5c0f\u65f6\u4ee3:\u9752\u6625\u9006\u6d41\u6210\u6cb3\u300b","vv":676887},"list_next":{"seq":"34","vid":"188413435","vidEncoded":"XNzUzNjUzNzQw","title":"\u5f20\u5411\u4e1c \u5468\u822a\u300a\u4e92\u8054\u7f51\u9010\u68a6\u4eba\u300b","vv":3021577},"username":"\u8001\u53cb\u8bb0","userid":"4336697","title":"\u738b\u5c0f\u5ddd \u738b\u5174\u300a\u4e92\u8054\u7f51\u4e09\u56fd\u6740\u300b","up":0,"down":0,"ts":"kWuygzCUGzw0BSqjAbSFU6A","tsup":"kWu*qzOUGzw0BSqjApyJU6A","preview":{"thumbs":["0521000353DF7CD06C1E6324F50CD33F","0521010353DF7CD06C1E6324F50CD33F","0521020353DF7CD06C1E6324F50CD33F"],"sectiontime":"6000","host":"http:\/\/g3.ykimg.com\/"},"key1":"bd700578","key2":"5f8fde382fce2a4d","tt":"0","ip":3659428867,"ep":"yeACNvmhqF1IsceDIGScVzUgqVVX5TCUj3Ow8JFQXBk=","show":{"showid":"291287","showid_encode":"153dfcf811a211e4a705","showname":"\u8001\u53cb\u8bb0 2014","paid":0,"paid_type":"","show_paid":0,"paid_url":"","copyright":1,"show_videotype":1,"theaterid":0,"stage":"104"},"dvd":{"notsharing":"0","point":[{"start":"145515","ctype":"story","title":"BAT\u5927\u8086\u6536\u8d2d \u79f0\u9738\u4e92\u8054\u7f51\u6c5f\u6e56","desc":""},{"start":"303652","ctype":"story","title":"\u9648\u4e00\u821f\u4e34\u95e8\u4e00\u811a \u8e22\u51fa\u4e92\u8054\u7f51\u4eba\u624d","desc":""},{"start":"580191","ctype":"story","title":"<\u5927\u8155>\u6210\u5c31\u641c\u72d7\u4e4b\u540d","desc":""},{"start":"700927","ctype":"story","title":"\u521b\u65b0\u5c31\u662f\u4e00\u5c42\u7a97\u6237\u7eb8","desc":""},{"start":"845860","ctype":"standard","title":"","desc":""},{"start":"975169","ctype":"story","title":"2020\u5e74\u624b\u673a\u5c06\u6b7b?","desc":""}]},"share":true,"share_type":["ecommerce"],"interact":true,"seconds":"1278.58","streamfileids":{"flv":"0*61*0*0*0*26*0*4*0*0*42*61*65*35*61*3*63*63*4*65*13*13*0*41*48*26*3*65*44*63*0*63*41*63*35*4*35*0*14*4*64*37*3*14*42*4*64*26*14*0*37*0*13*14*0*3*13*3*64*0*42*64*63*32*65*44*","mp4":"0*61*0*0*0*37*0*4*0*0*42*61*65*35*42*32*63*0*4*65*13*13*0*41*48*26*3*65*44*63*0*63*41*63*35*4*35*0*14*4*64*37*3*14*42*4*64*26*14*0*37*0*13*14*0*3*13*3*64*0*42*64*63*32*65*44*","hd2":"0*61*0*0*0*44*0*41*0*0*42*61*65*35*63*44*32*63*4*65*13*13*0*41*48*26*3*65*44*63*0*63*41*63*35*4*35*0*14*4*64*37*3*14*42*4*64*26*14*0*37*0*13*14*0*3*13*3*64*0*42*64*63*32*65*44*","hd3":"0*61*0*0*37*0*0*13*0*0*42*61*65*35*41*64*42*35*4*65*13*13*0*41*48*26*3*65*44*63*0*63*41*63*35*4*35*0*14*4*64*37*3*14*42*4*64*26*14*0*37*0*13*14*0*3*13*3*64*0*42*64*63*32*65*44*"},"segs":{"flv":[{"no":"0","size":"17161529","seconds":388,"k":"776ea035f3cbf3ce261e72e7","k2":"1e2a90a94b756a714"},{"no":"1","size":"12265471","seconds":401,"k":"6e2ede2aef40da09261e72e7","k2":"115f9caa1aa6c7376"},{"no":"2","size":"8518608","seconds":234,"k":"af8caa8f57c4958c261e72e7","k2":"150e1c4121365feba"},{"no":"3","size":"7962156","seconds":255,"k":"843aadc3531ef371241244f1","k2":"17f37e73c9d16309b"}],"mp4":[{"no":"0","size":"33534482","seconds":399,"k":"2cffb1c9c74391ae261e72e7","k2":"183b2903fbde73dae"},{"no":"1","size":"24113921","seconds":419,"k":"8543f2015e8a4bb1261e72e7","k2":"108bc571543c60e4e"},{"no":"2","size":"17495208","seconds":247,"k":"63d5cb5064448b9a261e72e7","k2":"133d96af43e74a4a7"},{"no":"3","size":"12852765","seconds":214,"k":"c8df406d77d94979261e72e7","k2":"1ce104898319b717b"}],"hd2":[{"no":"0","size":"36016828","seconds":194,"k":"ef65a036a7708c76261e72e7","k2":"1a5d3866280938307"},{"no":"1","size":"34207677","seconds":205,"k":"3022bc762e1425b1261e72e7","k2":"19d501cd20762bcd9"},{"no":"2","size":"26362639","seconds":205,"k":"aed332eb5755bf2f261e72e7","k2":"1c3b70b71b3cd47ac"},{"no":"3","size":"24033840","seconds":191,"k":"1bb7137522431ddf282aa0dd","k2":"103682107172724bd"},{"no":"4","size":"33622363","seconds":180,"k":"6c600d965eebb392261e72e7","k2":"1a3d8cf6771811979"},{"no":"5","size":"19537781","seconds":153,"k":"0e9834eb209d495c261e72e7","k2":"136c6c512094fda8c"},{"no":"6","size":"18370398","seconds":149,"k":"18049a3e7d92a948282aa0dd","k2":"118b14f1dd4aa8bf0"}],"hd3":[{"no":"0","size":"43348790","seconds":122,"k":"b7ec505b4525f643241244f1","k2":"1c3bf5faeb091a801"},{"no":"1","size":"38552669","seconds":133,"k":"c8371e238132faf5282aa0dd","k2":"1439c6dfc6ebaab88"},{"no":"2","size":"48198021","seconds":141,"k":"fe9c44c3ed7e7aa1261e72e7","k2":"133dba4011acfa13f"},{"no":"3","size":"30694332","seconds":135,"k":"9853046dc0c8b28b261e72e7","k2":"1e9db5aef5aee7bd8"},{"no":"4","size":"43012257","seconds":147,"k":"e1b9e86548d8ab83261e72e7","k2":"1ec28e3ce73bc75c8"},{"no":"5","size":"32105672","seconds":129,"k":"211307e7ba4f17d8282aa0dd","k2":"18c27872f3f31c35e"},{"no":"6","size":"57941797","seconds":134,"k":"1e10498033c04a12261e72e7","k2":"14ff1187d7d0cd4b9"},{"no":"7","size":"28973329","seconds":131,"k":"aa1877dbca28ae09282aa0dd","k2":"16eee46185a98ebbe"},{"no":"8","size":"30199952","seconds":109,"k":"79707ddff4871c8c261e72e7","k2":"14e44064e78f5ae10"},{"no":"9","size":"20470674","seconds":97,"k":"7f0d933124ade191241244f1","k2":"15a3546ea11d688de"}]},"streamsizes":{"flv":"45907764","mp4":"87996376","hd2":"192151526","hd3":"373497493"},"stream_ids":{"flv":"221349210","mp4":"221383393","hd2":"221393542","hd3":"221425833"},"streamlogos":{"flv":0,"mp4":0,"hd2":0,"hd3":0},"streamtypes":["flv","mp4","hd2","hd3"],"streamtypes_o":["hd2","flvhd","mp4","hd3"]}],"user":{"id":0},"verify_user":{"uid":4336697,"nick_name":"\u8001\u53cb\u8bb0","verified":1,"verified_reason":"\u4f18\u9177\u81ea\u5236\u8282\u76ee\u300a\u8001\u53cb\u8bb0\u300b","avatar":{"large":"http:\/\/g1.ykimg.com\/0130391F45558104ECD35C00422C395950FD68-F213-6419-DFA6-C20952FC38ED","big":"http:\/\/g1.ykimg.com\/0130391F45558104EC874500422C39EFCFA8C1-C13B-D3FD-092A-6C0B9AD01DE8","middle":"http:\/\/g2.ykimg.com\/0130391F45558104EDA6C200422C394D900260-784B-D268-E1E9-85ABB9AFD286","small":"http:\/\/g2.ykimg.com\/0130391F45558104EDDA2B00422C3979BBCFCA-34BC-DA59-D62C-AAD3B5E259C2"},"verified_icon":1,"video_note":0,"reward":0,"backstage_brand":1,"user_brand":1,"followers_count":221997,"user_center":"http:\/\/i.youku.com\/u\/UMTczNDY3ODg=","home_url":"http:\/\/i.youku.com\/u\/UMTczNDY3ODg=","show_brand":1,"subscription":0},"controller":{"search_count":true,"mp4_restrict":1,"stream_mode":1,"video_capture":true,"hd3_enabled":false,"area_code":110000,"dma_code":23724,"continuous":0,"playmode":"show","circle":false,"tsflag":true,"other_disable":false,"xplayer_disable":false,"app_disable":false,"share_disabled":false,"download_disabled":false,"pc_disabled":false,"pad_disabled":false,"mobile_disabled":false,"tv_disabled":false,"comment_disabled":false}}, JSON.data[0].dvd.point[3].title]，返回结果值：创新就是一层窗户纸
+2015-07-13 11:01:22 [ main:2220 ] - [ INFO ] 检查点 [checkIsMatcher] 执行通过，相关参数：[创新就是一层窗户纸, 创新就是一层窗户纸]

@@ -10,6 +10,7 @@
   </parent>
   
   <artifactId>phoenix_interface</artifactId>
+  <description>增加了接口测试API</description>
   <packaging>jar</packaging>
 
   <name>phoenix_interface</name>

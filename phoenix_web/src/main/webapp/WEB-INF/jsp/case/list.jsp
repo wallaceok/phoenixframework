@@ -44,15 +44,16 @@
 <table class="table table-bordered table-hover definewidth m10" >
     <thead>
     <tr>
-        <th>用例编号</th>
+        <th>ID</th>
         <th>场景名称</th>
         <th>用例名称</th>
         <th>状态</th>
+        <th>用例类型</th>
         <th>消息类型</th>
         <th>是否删除</th>
         <th>功能说明</th>
         <th>创建时间</th>
-        <th>管理操作</th>
+        <th width="19%">管理操作</th>
     </tr>
     </thead>
     <tbody>
@@ -63,12 +64,15 @@
             <td>${cs.caseName }</td>
             <c:choose>
 	            <c:when test="${cs.status eq 1}">
-	               <td>已启用</td>
+	               <td>启用</td>
 	              </c:when>
 	               <c:otherwise>
-	               <td>已禁用</td>
+	               <td>禁用</td>
 	               </c:otherwise>
             </c:choose>
+            <td>
+            	${cs.caseType }
+            </td>
             <td>
             	${cs.msgSendType }
             </td>
@@ -80,8 +84,8 @@
             <td>
                   <a href="update/${cs.id}">编辑脚本</a>&nbsp;&nbsp;
                   <a href="<%=request.getContextPath()%>/locator/case/${cs.id}">定位信息</a>&nbsp;&nbsp;
-                  <a href="<%=request.getContextPath()%>/data/list/${cs.id}">用例数据</a>&nbsp;&nbsp;
-                  <a href="delete/${cs.id}">删除用例</a>&nbsp;&nbsp;
+                  <a href="<%=request.getContextPath()%>/data/list/${cs.id}">数据</a>&nbsp;&nbsp;
+                  <a href="delete/${cs.id}">删除</a>&nbsp;&nbsp;
             </td>
         </tr>
         </c:forEach>

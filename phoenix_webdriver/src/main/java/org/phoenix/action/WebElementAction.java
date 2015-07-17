@@ -171,7 +171,8 @@ public class WebElementAction extends WebElementLocator implements ElementAction
 		caseLogBean.setEngineType("PhantomJsDriver");
 		DesiredCapabilities sCaps = new DesiredCapabilities();
         sCaps.setJavascriptEnabled(true);
-        sCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, WebElementAction.class.getResource("/").getPath().replace("%20", " ")+"drivers/phantomjs.exe");
+        if(SystemInfo.isWindows())sCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, WebElementAction.class.getResource("/").getPath().replace("%20", " ")+"drivers/phantomjs.exe");
+        else sCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, WebElementAction.class.getResource("/").getPath().replace("%20", " ")+"drivers/phantomjs");
         sCaps.setCapability(PhantomJSDriverService.PHANTOMJS_GHOSTDRIVER_PATH_PROPERTY, WebElementAction.class.getResource("/").getPath().replace("%20", " ")+"drivers/js/main.js");
         ArrayList<String> cliArgsCap = new ArrayList<String>();
         cliArgsCap.add("--web-security=false");
@@ -183,6 +184,9 @@ public class WebElementAction extends WebElementLocator implements ElementAction
         Selenide.open(url);
 	}
 	//WebElementAction.class.getResource("/").getPath().replace("%20", " ")
+	/**
+	 * 此方法不适用于Linux
+	 */
 	@Override
 	public void openNewWindowByIE(String url){
 			caseLogBean.setEngineType("IEDriver");
@@ -196,12 +200,14 @@ public class WebElementAction extends WebElementLocator implements ElementAction
 	}
 	/**
 	 * 如果打不开Chrome浏览器或或者报异常，应先使用 setChromeDriverExePath(String path)方法指定chromedriver.exe路径<br>
+	 * Linux环境下无需设置chrome的安装路径。建议chrome安装在默认路径下<br>
 	 * 该程序的路径必须和Chrome.exe在同一目录下
 	 */
 	@Override
 	public void openNewWindowByChrome(String url) {
 		caseLogBean.setEngineType("ChromeDriver");
-		System.setProperty("webdriver.chrome.driver",ChromeDriverPath);
+		if(SystemInfo.isWindows())System.setProperty("webdriver.chrome.driver",ChromeDriverPath);
+		else System.setProperty("webdriver.chrome.driver", WebElementAction.class.getResource("/").getPath().replace("%20", " ")+"drivers/chromedriver");
 		WebDriverRunner.setWebDriver(new ChromeDriver());
 		Selenide.open(url);
 	}
@@ -216,7 +222,7 @@ public class WebElementAction extends WebElementLocator implements ElementAction
 	@Override
 	public void openNewWindowByFirefox(String url) {
 		caseLogBean.setEngineType("FirefoxDriver");
-		System.setProperty("webdriver.firefox.bin", FirefoxPath);
+		if(SystemInfo.isWindows())System.setProperty("webdriver.firefox.bin", FirefoxPath);
 		WebDriverRunner.setWebDriver(new FirefoxDriver());
 		Selenide.open(url);
 	}

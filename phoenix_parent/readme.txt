@@ -11,12 +11,15 @@
 用例如果在本地调试时没有问题，那么就可以放到控制端进行执行了。<br>
 平台网站：http://www.cewan.la，中文搜：测完啦<br>
 <br>
-最新版本：1.2.8<br>
+最新版本：1.3.1<br>
 更新内容：<br>
-1、phoenix_web：修复xpath作数据分离后带有'\'符号的不能正常使用问题<br>
-2、phoenix_webdriver：修复webElementLinkFinder方法数据分离无效的问题<br>
+1、phoenix_web：修复xpath作数据分离后带有'\'符号的不能正常使用问题，增加了用例类型分类<br>
+2、phoenix_webdriver：修复webElementLinkFinder方法数据分离无效的问题，增加了对接口测试支持<br>
 3、phoenix_develop增加了几个应用案例，如如何做接口测试等<br>
-4、phoenix_web：修复通过编辑任务添加的定时任务策略不生效问题
+4、phoenix_web：修复通过编辑任务添加的定时任务策略不生效问题<br>
+5、phoenix_node：增加了接口测试用例类型支持，与webUI不同的是，接口用例使用独立的多个线程执行，而webUI是单线程。<br>
+6、phoenix_interface：增加了接口测试API<br>
+7、phoenix_webdriver:增加了Linux系统下chrome，Firefox，PhantomJs的支持，但不支持IEDriver<br>
 <br>
 系统名称：自动化测试平台<br> 
 系统介绍： <br>

@@ -64,7 +64,11 @@
     <tr>
         <td class="tableleft">用例说明</td>   
         <td><sf:input path="remark" value="${caseBean.remark}"/><sf:errors path="remark"/></td>
-    </tr>   
+    </tr> 
+    <tr>
+        <td class="tableleft">用例类型</td>
+        <td>${caseBean.caseType }</td>
+    </tr>  
     <tr>
         <td class="tableleft">启用状态</td>
         <td>

@@ -12,6 +12,7 @@ import org.phoenix.model.ScenarioBean;
 import org.phoenix.utils.MethodPattern;
 import org.phoenix.web.auth.AuthClass;
 import org.phoenix.web.dto.CaseDTO;
+import org.phoenix.web.enums.TaskType;
 import org.phoenix.web.model.User;
 import org.phoenix.web.service.ICaseService;
 import org.phoenix.web.service.IScenarioService;
@@ -100,6 +101,7 @@ public class CaseController {
 	public String add(Integer scenId,Model model,HttpSession session){
 		User u = (User) session.getAttribute("loginUser");
 		model.addAttribute("msgSendTypes",EnumUtils.enumProp2NameMap(MsgSendType.class, "name"));
+		model.addAttribute("caseTypes",EnumUtils.enumProp2NameMap(TaskType.class, "name"));
 		model.addAttribute("sceanList", scenarioService.getScenarioBeanList(u.getId()));
 		model.addAttribute("caseDTO", new CaseDTO());
 		return "case/add";
@@ -121,6 +123,7 @@ public class CaseController {
 		caseBean.setRemark(caseDTO.getRemark());
 		caseBean.setStatus(caseDTO.getStatus());
 		caseBean.setDeleteMsg(caseDTO.isDeleteMsg());
+		caseBean.setCaseType(caseDTO.getCaseType());
 		caseBean.setMsgSendType(caseDTO.getMsgSendType());
 		
 		caseService.addCase(caseBean);

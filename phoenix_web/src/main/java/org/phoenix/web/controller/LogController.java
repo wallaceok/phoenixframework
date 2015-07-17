@@ -73,6 +73,12 @@ public class LogController {
 		model.addAttribute("datas", caseLogService.getCaseLogPagerByBatchLog(id));
 		return "log/bcaselist";
 	}
+	@RequestMapping("/INTERFACE_CASE/{id}")
+	public String batchAPICaseList(@PathVariable Integer id,HttpSession session,Model model){
+		model.addAttribute("logId", id);
+		model.addAttribute("datas", caseLogService.getCaseLogPagerByBatchLog(id));
+		return "log/bcaselist";
+	}
 	
 	@RequestMapping("/scenCaseList/{id}")
 	public String scenCaseList(@PathVariable Integer id,Model model){

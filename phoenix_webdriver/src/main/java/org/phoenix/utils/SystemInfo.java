@@ -11,8 +11,19 @@ public class SystemInfo {
 		}
 	}
 	
+	public static boolean isWindows(){
+		if(System.getProperty("os.name").toLowerCase().contains("windows")){
+			return true;
+		}
+		return false;
+	}
+	
 	public static Properties getSystemProperties(){
 		System.getProperties().list(System.out);
 		return System.getProperties();
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(SystemInfo.isWindows());
 	}
 }

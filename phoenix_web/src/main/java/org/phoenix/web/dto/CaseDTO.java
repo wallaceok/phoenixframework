@@ -14,6 +14,7 @@ public class CaseDTO {
 	private String caseName;
 	private String codeContent;
 	private String className;
+	private String caseType;
 	private MsgSendType msgSendType;
 	private boolean isDeleteMsg;
 	private String remark;
@@ -44,6 +45,14 @@ public class CaseDTO {
 	}
 	public void setCaseName(String caseName) {
 		this.caseName = caseName;
+	}
+
+	public String getCaseType() {
+		return caseType;
+	}
+
+	public void setCaseType(String caseType) {
+		this.caseType = caseType;
 	}
 
 	public String getCodeContent() {

@@ -27,6 +27,7 @@ import com.alibaba.fastjson.JSON;
 public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ExecutorService executorService;
+	private ExecutorService apiService;
 	private CompletionService<AjaxObj> threadPool;
 	private Future<AjaxObj> future;
 	private String contentPath;
@@ -35,7 +36,8 @@ public class Servlet extends HttpServlet {
     }
     @Override
 	public void init(ServletConfig config) throws ServletException {
-		executorService = Executors.newSingleThreadExecutor();		
+		executorService = Executors.newSingleThreadExecutor();	
+		apiService = Executors.newCachedThreadPool();
 		threadPool = new ExecutorCompletionService<AjaxObj>(executorService);
 		future = threadPool.submit(new ActionHandler());
 		contentPath = config.getServletContext().getRealPath("");
@@ -43,6 +45,7 @@ public class Servlet extends HttpServlet {
 	@Override
 	public void destroy() {
 		executorService.shutdownNow();
+		apiService.shutdownNow();
 	}
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -61,17 +64,24 @@ public class Servlet extends HttpServlet {
 		taskDataDTO.setTaskType(taskType);
 		taskDataDTO.setContentPath(contentPath);
 		actionFactory.setTaskDataDTO(taskDataDTO);
-		if(future.isDone()){
-			future = threadPool.submit(actionFactory);
-			try {
-				WriteResponse.writeXml(response, JSON.toJSONString(future.get(500, TimeUnit.MILLISECONDS)));
-			} catch (TimeoutException e1) {
-				WriteResponse.writeXml(response, JSON.toJSONString(new AjaxObj(2,"任务发布成功")));
-			} catch (Exception e) {
-				WriteResponse.writeXml(response, JSON.toJSONString(new AjaxObj(0,e.getMessage()==null?"任务执行失败":e.getMessage())));
-			} 
-		} else {
-			WriteResponse.writeXml(response, JSON.toJSONString(new AjaxObj(1,"该分机当前正在执行测试任务，请选择其他执行机！")));
+		if(taskType == TaskType.INTERFACE_CASE){
+			checkResult(response,apiService.submit(actionFactory));
+		}else{
+			if(future.isDone()){
+				future = threadPool.submit(actionFactory);
+				checkResult(response,future);
+			} else {
+				WriteResponse.writeXml(response, JSON.toJSONString(new AjaxObj(1,"该分机当前正在执行测试任务，请选择其他执行机！")));
+			}
 		}
 	}
+    private void checkResult(HttpServletResponse response,Future<AjaxObj> r){
+		try {
+			WriteResponse.writeXml(response, JSON.toJSONString(r.get(500, TimeUnit.MILLISECONDS)));
+		} catch (TimeoutException e1) {
+			WriteResponse.writeXml(response, JSON.toJSONString(new AjaxObj(2,"任务发布成功")));
+		} catch (Exception e) {
+			WriteResponse.writeXml(response, JSON.toJSONString(new AjaxObj(0,e.getMessage()==null?"任务执行失败":e.getMessage())));
+		}
+    }
 }
