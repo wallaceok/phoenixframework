@@ -9,7 +9,8 @@
 控制端通过指派多个phoenix_node端方式执行测试用例。
 通过使用phoenix_develop开发用例代码的示例，<br>
 用例如果在本地调试时没有问题，那么就可以放到控制端进行执行了。<br>
-平台网站：http://www.cewan.la，中文搜：测完啦<br>
+平台网站：http://www.cewan.la<br>
+中文搜：测完啦<br>
 <br>
 最新版本：1.3.1<br>
 更新内容：<br>
